@@ -1,0 +1,422 @@
+extends layout
+
+block title
+  title= '产品快搜-新能源电动车'
+  meta(name="keywords", content="新能源汽车、新能源电动车、低速电动车、低速电动汽车、电动小汽车、四轮电动汽车、电动汽车代理、电动代步车、新能源电动汽车价格、老年电动车、电动车配件厂家、电动车配件大全、电动车配件批发厂家、四轮电动车配件、产品快搜新能源电动车、产品快搜网")
+  meta(name="description", content="产品快搜新能源电动车网是国内最专业的新能源电动车咨询网站，拥有最全的电动车库、电动车配件库，提供权威的新能源电动车政策新闻、新能源电动车报价、新能源电动车配件等服务信息。是新能源电动车企业产品推广、品牌宣传、拓展市场、网络推广的第一选择。为你购买新能源电动车整车和配件提供专业的、有效的价值信息。")
+append link
+  link(rel="stylesheet", href="http://ev.cpkso.com/css/owl.carousel.min.css")
+  link(rel="stylesheet", href="http://ev.cpkso.com/css/owl.theme.default.min.css")
+  link(rel="stylesheet", href="http://ev.cpkso.com/css/index.css")
+block content
+  .main-body
+    .banner-wrapper
+      .nav-banner
+        .search-wrapper
+          .search
+            .title-wrapper
+              h2.search-title 直接搜索
+            input#car-input(onkeydown='entersearch(1);',type='text', placeholder='请输入车型名称')
+            a#car-search-btn(title='我要搜车', target='_blank') 我要搜车
+            input#part-input(type='text', placeholder='请输入配件名称',onkeydown='entersearch(2);')
+            a#part-search-btn(title='配件搜索', target='_blank') 配件搜索
+          .filter
+            .title-wrapper
+              h2.search-title 条件搜索
+              p.desc 全方位多角度的保障
+            .tabbable
+              ul.nav.nav-tabs
+                li.active
+                  a(href='#types', data-toggle='tab', title='车型库') 车型库
+                li
+                  a(href='#parts', data-toggle='tab', title='配件库') 配件库
+              .tab-content
+                .tab-pane.active#types
+                  ul.details
+                    li.filter-type
+                      h3.title 品牌
+                      ul#brand.type-list.brand
+                        li
+                          a(title='特斯拉', href='/cars/search/0-99-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-1.png',alt='特斯拉')
+                        li
+                          a(title='比亚迪', href='/cars/search/0-7-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-2.png',alt='比亚迪')
+                        li
+                          a(title='雷克萨斯', href='/cars/search/0-60-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-3.png',alt='雷克萨斯')
+                        li
+                          a(title='北汽新能源', href='/cars/search/0-8-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-4.png',alt='北汽新能源')
+                        li
+                          a(title='福特', href='/cars/search/0-34-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-5.png',alt='福特')
+                        li
+                          a(title='日产', href='/cars/search/0-88-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-6.png',alt='日产')
+                        li
+                          a(title='雪佛兰', href='/cars/search/0-107-0-0-0-0-1',target='_blank')
+                            img(src='http://ev.cpkso.com/img/icon/logo-7.png',alt='雪佛兰')
+                    li.filter-type
+                      h3.title 价格
+                      ul#brand.type-list.price
+                        li
+                          a(title='10万以下', href='/cars/search/0-0-1-0-0-0-1',target='_blank') 10万以下
+                        li
+                          a(title='10-20万', href='/cars/search/0-0-2-0-0-0-1',target='_blank') 10-20万
+                        li
+                          a(title='20-30万', href='/cars/search/0-0-3-0-0-0-1',target='_blank') 20-30万
+                        li
+                          a(title='30-50万', href='/cars/search/0-0-4-0-0-0-1',target='_blank') 30-50万
+                        li
+                          a(title='50万以上', href='/cars/search/0-0-5-0-0-0-1',target='_blank') 50万以上
+                    li.filter-type
+                      h3.title 类型
+                      ul#brand.type-list.type
+                        li
+                          a(title='低速电动车', href='/cars/search/15-0-0-0-0-0-1',target='_blank') 低速电动车
+                        li
+                          a(title='纯电动', href='/cars/search/3-0-0-0-1-0-1',target='_blank') 纯电动
+                        li
+                          a(title='插电式', href='/cars/search/3-0-0-0-2-0-1',target='_blank') 插电式
+                        li
+                          a(title='增程式', href='/cars/search/3-0-0-0-3-0-1',target='_blank') 增程式
+                        li
+                          a(title='混合动力', href='/cars/search/3-0-0-0-4-0-1',target='_blank') 混合动力
+                    li.filter-type
+                      h3.title 级别
+                      ul#brand.type-list.level
+                        li
+                          a(title='微型', href='/cars/search/3-0-0-0-0-1-1',target='_blank') 微型
+                        li
+                          a(title='小型', href='/cars/search/3-0-0-0-0-2-1',target='_blank') 小型
+                        li
+                          a(title='紧凑型', href='/cars/search/3-0-0-0-0-3-1',target='_blank') 紧凑型
+                        li
+                          a(title='中型', href='/cars/search/3-0-0-0-0-4-1',target='_blank') 中型
+                .tab-pane#parts  
+                  .filter-type
+                    h3.title 分类
+                    ul.type-list.parts
+                      li
+                        a(title='标准件',href='/parts/search/6-0-1',target='_blank') 标准件
+                      li
+                        a(title='辅助件',href='/parts/search/7-0-1',target='_blank') 辅助件
+                      li
+                        a(title='车身系统',href='/parts/search/8-0-1',target='_blank') 车身系统
+                      li
+                        a(title='电气系统',href='/parts/search/9-0-1',target='_blank') 电气系统
+                      li
+                        a(title='转向系统',href='/parts/search/10-0-1',target='_blank') 转向系统
+                      li
+                        a(title='底盘系统',href='/parts/search/11-0-1',target='_blank') 底盘系统
+                      li
+                        a(title='密封系统',href='/parts/search/12-0-1',target='_blank') 密封系统
+                      li
+                        a(title='内饰系统',href='/parts/search/13-0-1',target='_blank') 内饰系统
+      .banners(style='height:556px;')
+        #sliders.owl-carousel.owl-theme(style='width: 924px;height: 410px;margin-bottom: 6px;position:relative;')
+          .item
+            a(href='http://ev.cpkso.com/news/1166.html',title='2017昆明泛亚电动车及新能源汽车展览会',target='_blank')
+              img(src='http://ev.cpkso.com/img/kunming.jpg',style='width:924px;height:410px;',alt='2017昆明泛亚电动车及新能源汽车展览会')
+          for slider,index in sliders
+            case index
+              when 0
+                .item.active
+                  a(href='/cars/#{slider.entity_id}',title='#{slider.title}',target='_blank')
+                    img(src='#{slider.pic}',style='width:924px;height:410px;',alt='#{slider.title}')
+              default
+                .item
+                  a(href='/cars/#{slider.entity_id}',title='#{slider.title}',target='_blank')
+                    img(src='#{slider.pic}',style='width:924px;height:410px;',alt='#{slider.title}')
+        .banner-sm
+          -for (var i = 0; i < banners.length; ++i )
+            .banner
+              a(href='/cars/#{banners[i].entity_id}',target='_blank')
+                img(src='#{banners[i].pic}')
+    .news-guide
+      ul.nav.nav-tabs
+        li.active
+          a(href='/news/daogou/',title='导购',target='_blank') 导购
+        li
+          a(href='/news/jishu/',title='技术',target='_blank') 技术
+        li
+          a(href='/news/hangye/',title='行业',target='_blank') 行业
+        li
+          a(href='/news/zhengce/',title='政策',target='_blank') 政策
+        li
+          a(href='/news/yongche/',title='用车',target='_blank') 用车
+        li.fr-li
+          a(href='/news/',title='查看更多',target='_blank') 查看更多
+      .news-container
+        .tab-content
+          .tab-pane.active#guide
+            .owl-lg.owl-carousel.owl-theme
+              each news in newsG
+                a.item(href='/news/#{news.entity_id}.html',title='#{news.title}',target='_blank')
+                  img(src='#{news.pic}',style='width:280px;height:180px;',alt='#{news.title}')
+                  p.title #{news.title}
+    #J_cars.products
+      .content-left
+        ul.nav.nav-tabs
+          li.active
+            a(href='#new-car',data-toggle='tab',data-loaded='1',data-id='NEW',title='最新车型') 最新车型
+          li
+            a(href='#hot-car',data-toggle='tab',data-loaded='',data-id='HOT',title='热门车型') 热门车型
+          li
+            a(href='#low-car',data-toggle='tab',data-loaded='',data-id='DSCX',title='低速车型') 低速车型
+          li
+            a(href='#ev-car',data-toggle='tab',data-loaded='',data-id='CYCX',title='乘用车型') 乘用车型
+          li.fr-li
+            a(href='/cars/',title='进入车型库',target='_blank') 进入车型库
+        .tab-content
+          .tab-pane.active#new-car
+            mixin car(cars)
+                ul.list-content
+                  each car in cars
+                    li.list-item
+                      a(href='/cars/#{car.entity_id}',title='#{car.title}',target='_blank')
+                        .detail
+                          h3.title #{car.title}
+                          p.desc #{car.describe}
+                        img(src='#{car.pic}',alt='#{car.title}')
+                      .car-logo
+                        img(src='#{car.logo}',alt='#{car.title}')
+            +car(newCar)
+          .tab-pane#hot-car
+          .tab-pane#low-car
+          .tab-pane#ev-car
+      .content-right
+        #needCar.recommend
+          .header
+            h3.title 热门整车求购
+            a(href='/infos/search/0-1-1',target='_blank') 查看更多
+          .msg-wrapper
+            .pics
+              .carousel-wrapper
+                #slider-sm-1.owl-carousel
+                  mixin require(reqs)
+                    each req in reqs
+                      a.item(href='/infos/#{req.id}',title='#{req.title}',target='_blank')
+                        img(src='#{req.pic_thumb}',alt='#{req.title}')
+                  +require(carReq)
+            #needCarMsg.msg
+              mixin requireList(reqs)
+                ul
+                  each req in reqs
+                    li
+                      a(href='/infos/#{req.id}',title='#{req.title}',target='_blank') #{req.title}
+              +requireList(carReqPic)
+    #companyBar1.company-bar
+      a(href='/companies/#{promo1[0].entity_id}',title='#{promo1[0].title}',target='_blank')
+        img(src='#{promo1[0].pic}',alt='#{promo1[0].title}')
+    #J_parts.products
+      .content-left
+        .tab-container
+          ul#partsTabs.nav.nav-tabs
+            li.active
+              a(href='#new-product',data-toggle='tab',data-loaded='1',data-id='INDNEWP',title='最新配件') 最新配件
+            li
+              a(href='#hot-product',data-toggle='tab',data-loaded='',data-id='INDHOTP',title='热门配件') 热门配件
+            li
+              a(href='#standard',data-toggle='tab',data-loaded='',data-id='IND6',title='标准件') 标准件
+            li
+              a(href='#auxiliary',data-toggle='tab',data-loaded='',data-id='IND7',title='辅助件') 辅助件
+            li
+              a(href='#car-body',data-toggle='tab',data-loaded='',data-id='IND8',title='车身系统') 车身系统
+            li
+              a(href='#electric',data-toggle='tab',data-loaded='',data-id='IND9',title='电气系统') 电气系统
+            li
+              a(href='#steering',data-toggle='tab',data-loaded='',data-id='IND10',title='转向系统') 转向系统
+            li
+              a(href='#underpan',data-toggle='tab',data-loaded='',data-id='IND11',title='底盘系统') 底盘系统
+            li
+              a(href='#sealing',data-toggle='tab',data-loaded='',data-id='IND12',title='密封系统') 密封系统
+            li
+              a(href='#interior',data-toggle='tab',data-loaded='',data-id='IND13',title='内饰系统') 内饰系统
+            li.fr-li
+              a(href='/parts/',title='进入配件库',target='_blank') 进入配件库
+          .tab-content
+            #new-product.tab-pane.active
+              mixin parts(parts)
+                  ul.list-content
+                    each part in parts
+                      li.list-item
+                        a(href='/parts/#{part.entity_id}',title='#{part.title}',target='_blank')
+                          .detail
+                            h3.title #{part.title}
+                            p.desc #{part.brief}
+                          img(src='#{part.pic}',alt='#{part.title}')
+              +parts(newParts)
+            #hot-product.tab-pane    
+            #standard.tab-pane    
+            #auxiliary.tab-pane    
+            #car-body.tab-pane    
+            #electric.tab-pane    
+            #steering.tab-pane    
+            #underpan.tab-pane    
+            #sealing.tab-pane    
+            #interior.tab-pane    
+      .content-right
+        #needParts.recommend
+          .header
+            h3.title 热门配件求购
+            a(href='/infos/search/0-2-1',target='_blank') 查看更多
+          .msg-wrapper
+            .pics
+              .carousel-wrapper
+                #slider-sm-2.owl-carousel
+                  +require(partsReq)
+            #needPartsMsg.msg
+              +requireList(partsReqPic)
+    #companyBar2.company-bar
+      a(href='/companies/#{promo2[0].entity_id}',title='#{promo2[0].title}',target='_blank')
+        img(src='#{promo2[0].pic}',alt='#{promo2[0].title}')
+    .products
+      .content-left
+        #J_news.news
+          ul.nav.nav-tabs
+            li.active
+              a(href='#newsNew',title='最新资讯',data-toggle='tab',data-loaded='1',data-id='') 最新资讯
+            li
+              a(href='#newsNewCar',title='新车',data-toggle='tab',data-loaded='',data-id='1') 新车
+            li
+              a(href='#newsTec',title='技术',data-toggle='tab',data-loaded='',data-id='2') 技术
+            li
+              a(href='#newsIndus',title='行业',data-toggle='tab',data-loaded='',data-id='3') 行业
+            li
+              a(href='#newsPol',title='政策',data-toggle='tab',data-loaded='',data-id='4') 政策
+            li
+              a(href='#newsUse',title='用车',data-toggle='tab',data-loaded='',data-id='6') 用车
+            li.fr-li
+              a(href='/news/',title='查看更多',target='_blank') 更多
+          .tab-container
+            .tab-content
+              #newsNew.tab-pane.active
+                .news-content
+                  each item in newsN
+                    .news-item.clearfix
+                      .news-item-image
+                        a(href='/news/#{item.id}.html',title='#{item.title}',target='_blank')
+                          img(src='#{item.thumb}',alt='#{item.title}')
+                        span.tag #{item.artCt}
+                      .news-item-info
+                        h4.news-item-title
+                          a(href='/news/#{item.id}.html',title='#{item.title}',target='_blank') #{item.title}
+                        p.news-item-summary #{item.brief}
+                        .news-item-footer
+                          .news-time #{item.publish_time}
+              #newsNewCar.tab-pane
+              #newsTec.tab-pane
+              #newsIndus.tab-pane
+              #newsPol.tab-pane
+              #newsUse.tab-pane
+      .content-right
+        .news.news-brand
+          ul.nav.nav-tabs
+            li.active
+              a(href='#newsBrand',title='品牌专区',data-toggle='tab') 品牌专区
+            li.fr-li
+              a(href='/news/pinpai/',title='查看更多',target='_blank') 更多
+          .news-brand-content
+            each item in newsB
+              .news-item.clearfix
+                h4.news-item-title.clearfix
+                  a(href='/news/#{item.id}.html',title='#{item.title}',target='_blank') #{item.title}
+                p.news-time #{item.publish_time}
+    .company-show
+      .title
+        .line
+        .text 企业秀
+        .line
+      #companyShow.show-content
+        ul.show-list
+          each show in shows
+            li.show-pics
+              h3.title #{show.title}
+              .pics
+                each pic in show.pics
+                  .pic
+                    a(href='/companies/#{show.entity_id}',title='#{show.title}',target='_blank')
+                      img(src='#{pic}',alt='#{show.title}')
+    .company-show
+      .title
+        .line
+        .text 展会信息
+        .line
+      #exhibition.owl-carousel.owl-theme
+        each exhibition in exhibitions
+          .item
+            a(href='#{exhibition.url}',target='_blank',rel='nofollow')
+              img(src='#{exhibition.pic}')
+    .company-show
+      .title
+        .line
+        .text 会员企业
+        .line
+      #vip.owl-carousel.owl-theme
+        each vip in vips
+          .item
+            a(href='/companies/#{vip.entity_id}',title='#{vip.title}',target='_blank')
+              img(src='#{vip.pic}',alt='#{vip.title}')
+append script
+  script(src="http://ev.cpkso.com/js/lib/mustache.min.js")
+  script(src="http://ev.cpkso.com/js/template.js")
+  script(src="http://ev.cpkso.com/js/lib/owl.carousel.min.js")
+  script.
+    $(function(){
+      $('.owl-lg').owlCarousel({
+        items: 4,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 800,
+        nav: true,
+        dots: false,
+        responsive: false
+      });
+      $('#sliders,#slider-sm-1,#slider-sm-2').owlCarousel({
+        items: 1,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 800,
+        responsive: false
+      });
+      $('#exhibition').owlCarousel({
+        items: 5,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 800,
+        margin: 20,
+        responsive: false,
+        dots: false
+      });
+      $('#vip').owlCarousel({
+        items: 8,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 800,
+        margin: 20,
+        responsive: false,
+        dots: false
+      });
+    });
+    $('#car-search-btn').click(function(){
+      var word = $('#car-input').val();
+      var url = word ? '/cars/search/0-0-0-0-0-0-1?word=' + word : '/cars/search/0-0-0-0-0-0-1';
+      window.open(url);
+    })
+    $('#part-search-btn').click(function(){
+      var word = $('#part-input').val();
+      var url = word ? '/parts/search/0-0-1?word=' + word : '/parts/search/0-0-1';
+      window.open(url);
+    })
+    function entersearch(id){
+      var event = window.event || arguments.callee.caller.arguments[0];
+      if (event.keyCode == 13 && id === 1) {
+        $('#car-search-btn').trigger('click');
+      } else if (event.keyCode == 13 && id === 2) {
+        $('#part-search-btn').trigger('click');
+      }
+    }
+
+

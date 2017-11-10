@@ -1,0 +1,66 @@
+extends ../news
+
+block newsNav
+  li
+    a.tab(href='/news/xinche/') 新车
+  li
+    a.tab(href='/news/jishu/') 技术
+  li.active
+    a.tab(href='/news/hangye/') 行业
+  li
+    a.tab(href='/news/zhengce/') 政策
+  li
+    a.tab(href='/news/daogou/') 导购
+  li
+    a.tab(href='/news/yongche/') 用车
+  li
+    a.tab(href='/news/pinpai/') 品牌
+block page
+  .pagination.clearfix
+    if pageinfo.pageNo===1
+      span.disabled(href='javascript:;') 上一页
+    else
+      a(href=pageinfo.pageNo-1) 上一页
+    if pageinfo.maxPageNo < 7
+      - var n = 1
+      while n <= pageinfo.maxPageNo
+        if n===pageinfo.pageNo
+          span.current(href=n)= n++
+        else
+          a(href=n)= n++     
+    else if pageinfo.pageNo <= 3
+      - var n = 1
+      while n <= 5
+        if n===pageinfo.pageNo
+          span.current(href=n)= n++
+        else
+          a(href=n)= n++
+      a ...
+      a(href=pageinfo.maxPageNo) #{pageinfo.maxPageNo}
+    else if pageinfo.pageNo > pageinfo.maxPageNo-2
+      a(href='1') 1
+      a ...
+      - var n = pageinfo.pageNo-2
+      while n <= pageinfo.maxPageNo
+        if n===pageinfo.pageNo
+          span.current(href=n)= n++
+        else
+          a(href=n)= n++        
+    else
+      a(href='1') 1
+      if pageinfo.pageNo > 4
+        a ...
+      - var n = pageinfo.pageNo-2
+      while n <= pageinfo.pageNo+2
+        if n===pageinfo.pageNo
+          span.current(href=n)= n++
+        else
+          a(href=n)= n++        
+      if pageinfo.pageNo < pageinfo.maxPageNo-3
+        a ...
+      if pageinfo.pageNo < pageinfo.maxPageNo-2
+        a(href=pageinfo.maxPageNo) #{pageinfo.maxPageNo}
+    if pageinfo.pageNo===pageinfo.maxPageNo
+      span.disabled(href='javascript:;') 下一页
+    else
+      a(href=pageinfo.pageNo+1) 下一页

@@ -1,0 +1,17 @@
+.cnt
+  h4.span-title #{company.name}
+  dl.cnt-detail
+    dt 企业类型：
+    dd #{company.company_ct}
+    if company.charge
+      dt 联系人：
+      dd #{company.charge}
+    if company.contact
+      dt 联系电话：
+      dd #{company.contact}
+    if company.url
+      dt 企业官网：
+      dd #{company.url}
+    if company.province
+      dt 所在地区：
+      dd #{company.province}

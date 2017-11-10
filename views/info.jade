@@ -1,0 +1,307 @@
+extends layout
+
+block title
+  title= '供求信息、新能源电动车采购信息-产品快搜新能源电动车'
+  meta(name="keywords", content="整车、配件、采购信息、企业求购、供求信息")
+  meta(name="description", content="产品快搜新能源电动车供求信息里有新能源电动汽车产业链企业的采购求购信息汇总,企业可以发布供求信息、有助于企业找到最合适的供应商,采购到满意的产品。")
+append link
+  link(rel='stylesheet', href="http://ev.cpkso.com/css/master.css")
+  link(rel='stylesheet', href="/css/detail.css")
+block content
+  .product-head-nav
+    ol.breadcrumb
+      span.location 当前位置：
+      li
+        a(href='/') 首页
+      li
+        a(href='/infos/') 求购信息
+      li.active #{info.title}
+  .main-body
+    .info-container.product-intro.clearfix
+      .preview-wrapper
+        .preview
+          if info.pic
+            img(src='#{info.pic}')
+          else
+            img(src='/img/no.jpg')
+      .item-info-wrapper
+        .item-info
+          .time
+            span 倒计时：
+              span#day
+              span#hour
+              span#mini
+              span#sec
+            i.icon.iconfont &#xe614;
+          .info-title #{info.title}
+            if info.reply&&info.reply!=='0'
+              span 已收到报价(#{info.reply})条
+            else
+              span 暂无报价信息
+          .info-detail
+            dl
+              dt
+                i.icon.iconfont &#xe611;
+                分类
+              dd #{info.category.name}
+              dt
+                i.icon.iconfont &#xe60e;
+                所在地
+              dd #{info.province}-#{info.city}
+              dt
+                i.icon.iconfont &#xe6f1;
+                采购量
+              dd #{info.number}
+              dt
+                i.icon.iconfont &#xe653;
+                报名截止
+              dd #{info.expire_date}
+              dt
+                i.icon.iconfont &#xe690;
+                采购类型
+              if info.buyerType==='ENTERPRISE'
+                dd 企业采购
+              else if info.buyerType==='PERSONAL'
+                dd 个人采购
+              dt
+                i.icon.iconfont &#xe68c;
+                联系方式
+              dd.contact 留言后可见
+          .button
+            button 查看联系方式
+    .content-down
+      .brief
+        table.table.table-bordered
+          tr
+            th.need.col-sm-1 需求说明
+            td#state.col-sm-11(style='text-align:left;padding-left:20px;max-width:960px;')!=info.brief
+      if offers.length
+        table.table.table-hover.table-bordered.table-striped
+          caption 报价信息
+          thead
+            tr
+              th 联系人
+              th 联系电话
+              th 相关说明
+              th 发布时间
+          tbody#tabinfo
+            each offer in offers
+              tr
+                td #{offer.name}
+                td #{offer.tel}
+                td #{offer.brief}
+                td #{offer.require.publish_time}
+    #bimg.bottom-img
+      a(href='/cars/#{promo[0].entity_id}')
+        img(src='#{promo[0].pic}')
+  .pop-wrapper
+    #offer-container
+      h4 请填写报价信息：
+      a.close-btn(href="javascript:;")
+        i.icon.iconfont &#xe601;
+      form#offer-form.form-horizonal.clearfix(action='http://ev.cpkso.com/admin/offer_add' name='offerForm',enctype='multipart/form-data')
+        .form-group.clearfix
+          label#prod-name.col-sm-3.control-label 产品名称：
+          .col-sm-9
+            input(type='hidden',name='offer.require.id' value='#{info.id}')
+            p.form-control-static #{info.title}
+        .form-group.clearfix
+          label.col-sm-3.control-label 产品分类：
+          .col-sm-9
+            p.form-control-static #{info.category.name}
+        .form-group.clearfix
+          label.col-sm-3.control-label 相关说明：
+          .col-sm-9
+            textarea#comment.form-control(name='offer.brief')
+        .form-group.clearfix
+          label.col-sm-3.control-label 联系人：
+          .col-sm-9
+            input#user.form-control(type='text',name='offer.name',placeholder='必填',required)
+        .form-group.clearfix
+          label.col-sm-3.control-label 手机号：
+          .col-sm-9
+            input#phone.form-control(type='text',name='offer.tel',placeholder='必填',required)
+        .form-group.clearfix
+          label.col-sm-3.control-label 微信号：
+          .col-sm-9
+            input#weixin.form-control(type='text',name='offer.wechat')
+        .form-group.clearfix
+          label.col-sm-3.control-label QQ号：
+          .col-sm-9
+            input#qq.form-control(type='text',name='offer.qq')
+        .form-group.clearfix
+          label.col-sm-3.control-label 邮箱：
+          .col-sm-9
+            input#email.form-control(type='text',name='offer.email')
+        .form-group.clearfix
+          label.col-sm-3.control-label
+          .col-sm-9
+            button#offer-btn.form-control(type='submit') 立即报价
+    #charge-container
+      form#charge-form
+        p.msg 报价成功
+        if info.name
+          .form-group.clearfix
+            label#prod-name.col-sm-6.control-label 联系人：
+            .col-sm-6
+              p.form-control-static #{info.name}
+        if info.tel
+          .form-group.clearfix
+            label#prod-name.col-sm-6.control-label 手机号：
+            .col-sm-6
+              p.form-control-static #{info.tel}
+        if info.wechat
+          .form-group.clearfix
+            label#prod-name.col-sm-6.control-label 微信号：
+            .col-sm-6
+              p.form-control-static #{info.wechat}
+        .button-container
+          button#saved-btn(type='button') 已保存
+    .cover
+append script                          
+  script(src='http://ev.cpkso.com/js/lib/jquery.form.js')
+  script(src='http://ev.cpkso.com/js/lib/jquery.validate.js')
+  script(src='http://ev.cpkso.com/js/lib/validate-methods.js')
+  script(src='http://ev.cpkso.com/js/lib/messages_zh.js')
+  script.
+    $(function() {
+      $('#offer-form').validate({
+        rules: {
+          "offer.brief": {
+            stringCheck: true
+          },
+          "offer.name": {
+            required: true,
+            maxlength: 30,
+            isChineseChar: true
+          },
+          "offer.tel": {
+            required: true,
+            maxlength: 30,
+            isTel: true
+          },
+          "offer.qq": {
+            maxlength: 30,
+            isQq: true
+          },
+          "offer.wechat": {
+            maxlength: 30,
+            isDigits: true
+          },
+          "require.email": {
+            maxlength: 40,
+            email: true
+          },
+        },
+        messages: {
+          "offer.brief": {
+            required: '请输入产品名称',
+            maxlength: '长度不能超过100个字符'
+          },
+          "offer.name": {
+            required: '请输入联系人',
+            maxlength: '长度不能超过30个字符',
+            isChineseChar: '请输入中文名称'
+          },
+          "require.province": {
+            maxlength: '长度不能超过20个字符'
+          },
+          "require.city": {
+            maxlength: '长度不能超过20个字符'
+          },
+          "offer.tel": {
+            required: '请输入手机号码',
+            maxlength: '长度不能超过30个字符',
+          },
+          "offer.qq": {
+            maxlength: '长度不能超过30个字符'
+          },
+          "offer.wechat": {
+            maxlength: '长度不能超过30个字符'
+          },
+          "offer.email": {
+            maxlength: '长度不能超过40个字符'
+          },
+        },
+        submitHandler: function(form) {
+          console.log(1);
+          $(form).ajaxSubmit(function(data){
+            console.log(2);
+            if (data.response.msg.success){
+              $('#offer-container').hide();
+              $('#charge-container').show();
+            } else {
+              alert('报价失败，请重新提交报价！')
+            }
+          })
+        }
+      })
+      $('.button button').on('click',function(){
+        $('#offer-container, .cover').show();
+      });
+      $('#offer-container .close-btn').on('click',function(){
+        $('#offer-container, .cover').hide();
+        validator.resetForm();
+      })
+      $('#saved-btn').click(function() {
+        $('#charge-container, .cover').hide();
+        validator.resetForm();
+      })
+      var d = new Date('#{info.expire_date}').getTime();
+      var o = {
+        sec: document.getElementById("sec"),
+        mini: document.getElementById("mini"),
+        hour: document.getElementById("hour"),
+        day: document.getElementById("day"),
+      };
+      var fnTimeCountDown = function(d, o){
+        var f = {
+          zero: function(n){
+            var n = parseInt(n, 10);
+            if(n > 0){
+              if(n <= 9){
+                n = "0" + n;	
+              }
+              return String(n);
+            }else{
+              return "00";	
+            }
+          },
+          dv: function(){
+            d = d || Date.UTC(2050, 0, 1); //如果未定义时间，则我们设定倒计时日期是2050年1月1日
+            var future = new Date(d), now = new Date();
+            //现在将来秒差值
+            var dur = Math.round((future.getTime() - now.getTime()) / 1000) + future.getTimezoneOffset() * 60, pms = {
+              sec: "00",
+              mini: "00",
+              hour: "00",
+              day: "00"
+            };
+            if(dur > 0){
+              pms.sec = f.zero(dur % 60);
+              pms.mini = Math.floor((dur / 60)) > 0? f.zero(Math.floor((dur / 60)) % 60) : "00";
+              pms.hour = Math.floor((dur / 3600)) > 0? f.zero(Math.floor((dur / 3600)) % 24) : "00";
+              pms.day = Math.floor((dur / 86400)) > 0? f.zero(Math.floor((dur / 86400))) : "00";
+            }
+            return pms;
+          },
+          ui: function(){
+            if(o.sec){
+              o.sec.innerHTML = f.dv().sec;
+            }
+            if(o.mini){
+              o.mini.innerHTML = f.dv().mini + ':';
+            }
+            if(o.hour){
+              o.hour.innerHTML = f.dv().hour + ':';
+            }
+            if(o.day){
+              o.day.innerHTML = f.dv().day + '天';
+            }
+            setTimeout(f.ui, 1000);
+          }
+        };	
+        f.ui();
+      };
+      fnTimeCountDown(d, o);
+    })
