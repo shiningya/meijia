@@ -1,0 +1,12 @@
+.main-body .main-content {
+    display: flex;
+    width: 1250px;
+    margin: 0 auto;
+}
+.main-body .main-content .content-left {
+    flex: 0 0 310px;
+    width: 310px;
+}
+.main-body .main-content .content-right {
+    flex: 0 0 920px;
+}

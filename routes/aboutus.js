@@ -15,7 +15,7 @@ router.get('/', function(req, res, next) {
             data.fc = fc.data.response.data;
             data.qq = qq.data.response.data;
             data.contact = contact.data.response.data;
-            res.render('index', data);
+            res.render('aboutus', data);
         }));
 });
 

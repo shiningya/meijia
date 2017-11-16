@@ -9,46 +9,20 @@ html
       meta(name="renderer", content="webkit")
       meta(name="baidu-site-verification", content="VUAL7R3a2v")
     block link
-      link(rel='stylesheet', href='http://ev.cpkso.com/css/reset.css')
-      link(rel='stylesheet', href='http://ev.cpkso.com/css/bootstrap.min.css')
-      link(rel='stylesheet', href='http://ev.cpkso.com/css/base.css')
+      link(rel='stylesheet', href='/css/reset.css')
+      link(rel='stylesheet', href='/css/bootstrap.min.css')
+      link(rel='stylesheet', href='/css/base.css')
   block body
     header.header
       .header-left
-        a(href='http://ev.cpkso.com',target='_blank',title='产品快搜-新能源电动车')
-          img(src='http://ev.cpkso.com/img/search-logo.png', alt='产品快搜-新能源电动车')
+        a(href='',target='_blank',title='胭脂雪')
+          img(src='/img/logo.png', alt='胭脂雪')
       block hright
         .header-right
-          img(src='http://ev.cpkso.com/img/2017.png',alt='2017')
+          img(src='/img/tel.png',alt='tel')
     include includes/nav.jade
     block content
     include includes/footer.jade
     block script
-      script(src='http://ev.cpkso.com/js/lib/jquery-2.0.0.min.js')
-      script(src='http://ev.cpkso.com/js/lib/bootstrap.min.js')
-      script.
-        var _hmt = _hmt || [];
-        (function() {
-          var hm = document.createElement("script");
-          hm.src = "https://hm.baidu.com/hm.js?6c4119bd6ed6dca0c77afc24f4b663aa";
-          var s = document.getElementsByTagName("script")[0]; 
-          s.parentNode.insertBefore(hm, s);
-        })();
-      script.
-        (function(){
-          var bp = document.createElement('script');
-          var curProtocol = window.location.protocol.split(':')[0];
-          if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-          }
-          else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-          }
-          var s = document.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(bp, s);
-        })();
-      script.
-        (function(){
-          var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?983a5023023a6e3ac543e09e1b2a1f69":"https://jspassport.ssl.qhimg.com/11.0.1.js?983a5023023a6e3ac543e09e1b2a1f69";
-          document.write('<script src="' + src + '" id="sozz"><\/script>');
-        })();
+      script(src='/js/lib/jquery-2.0.0.min.js')
+      script(src='/js/lib/bootstrap.min.js')
