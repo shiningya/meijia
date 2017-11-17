@@ -3,14 +3,14 @@ var axios = require('axios');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/:cate', function(req, res, next) {
+router.get('/:cate', function (req, res, next) {
     var cate = req.params.cate;
     axios.all([getCate(cate)])
         .then(axios.spread(function (cate) {
             var data = {};
-            data.curnav = 'aboutus';
+            data.curnav = 'contactus';
             data.cate = cate.data.response.data;
-            res.render('aboutus', data);
+            res.render('contactus', data);
         }));
 });
 

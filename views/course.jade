@@ -5,104 +5,34 @@ block title
   meta(name="keywords", content="新能源汽车、新能源电动车、低速电动车、低速电动汽车、电动小汽车、四轮电动汽车、电动汽车代理、电动代步车、新能源电动汽车价格、老年电动车、电动车配件厂家、电动车配件大全、电动车配件批发厂家、四轮电动车配件、产品快搜新能源电动车、产品快搜网")
   meta(name="description", content="产品快搜新能源电动车网是国内最专业的新能源电动车咨询网站，拥有最全的电动车库、电动车配件库，提供权威的新能源电动车政策新闻、新能源电动车报价、新能源电动车配件等服务信息。是新能源电动车企业产品推广、品牌宣传、拓展市场、网络推广的第一选择。为你购买新能源电动车整车和配件提供专业的、有效的价值信息。")
 append link
-  link(rel="stylesheet", href="/css/owl.carousel.min.css")
-  link(rel="stylesheet", href="/css/owl.theme.default.min.css")
-  link(rel="stylesheet", href="/css/index.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/owl.carousel.min.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/owl.theme.default.min.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/main.css")
 block content
   .main-body
-    #sliders.owl-carousel.owl-theme(style='width: 100%;margin-bottom: 6px;position:relative;')
-      for slider,index in sliders
-        case index
-          when 0
-            .item.active
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
-          default
-            .item
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
-    section.intro
-      .section-content
+    section
+      img(src='/img/banner.jpg')
+    section.main-content
+      .content-left
+        .navs.btn-group-vertical
+          a.btn.btn-default(href='') 精品课程
+          a.btn.btn-default(href='') 精品课程一
+          a.btn.btn-default(href='') 精品课程二
+          a.btn.btn-default(href='') 作品展示
+      .content-right
         .content-header
-          img(src='/img/intro-title.png')
-        .content-body
-          .intro-img
-            img(src='/img/tower.jpg')
-          .intro-container
-            h4.intro-title ネイルアートの詳細を理解する
-            p.intro-content 在日本，美甲已经司空见惯，当一个新的美甲技术出现的时候，
-              br
-              日本女生显然没有中国女生那么大的反应，其实美甲在中国是有很大潜力的，
-              br
-              处于上升阶段，一般模式都是市场化商业化快速消费，很少有人真正的去做事，
-              br
-              真正的在美业这件事上付出想要攀岩登顶，当然最终我们还是要落俗，
-              br
-              毕竟还是要服务到一线，需要被消费者肯定，但是我希望以后我们是在做事，
-              br
-              提高消费者的品味能力，继而更好的通过美甲彰显自己
-    section.banner
-      img(src='/img/teacher.jpg')
-    section.course
-      .section-content
-        .content-header
-          img(src='/img/advan-title.png')
-        .content-body
-          .kc
-            each course in kc
-              a.kc-item(href='')
-                img(src='#{course.pic}' alt='#{course.title}')
-          .course-contact.clearfix
-            .qrcode
-              img(src='/img/qrcode.png')
-            .contact-tel-container
-              .tel-lg 课程咨询热线：
-                span 0371-56608987
-              .info-container
-                .tel-sm-container
-                  .tel-sm
-                    span.tel-num
-                    span.tel-name
-                .info
-                  p.address 学院地址：
-                  p.copyright 版权所有：胭脂雪美甲培训学校 豫ICP证030173号
-    section.works
-      .section-content
-        .content-header
-          img(src='/img/works-title.png')
-        .zs
-          each work in zs
-            a.zs-item(href='')
-              img(src='#{work.pic}',alt='#{work.title}')
-    section.banner
-      img(src='/img/advantage.jpg')
-    section.highlights
-      .section-content
-        .content-header
-          img(src='/img/hx-title.png')
-        .hx.clearfix
-          each figure in hx
-            a.hx-item(href='')
-              img(src='#{figure.pic}',alt='#{figure.title}')
-    section.features
-      .section-content
-        .content-header
-          img(src='/img/fc-title.png')
-        .fc
-          .fc-sm.clearfix
-            each figure,index in fc
-              if index<2
-                a.fc-item(href='')
-                  img(src='#{figure.pic}',alt='#{figure.title}')
-          .fc-lg
-            each figure,index in fc
-              if index>=2
-                a.fc-item(href='')
-                  img(src='#{figure.pic}',alt='#{figure.title}')
+          span.title
+          ul.breadcrumb
+            li
+              a(href='#') 首页
+            li
+              a(href='#') 首页
+            li.active 首页
+        div!= cate[0].detail
 append script
-  script(src="/js/lib/mustache.min.js")
-  script(src="/js/template.js")
-  script(src="/js/lib/owl.carousel.min.js")
+  script(src="http://www.yzx.com/js/lib/mustache.min.js")
+  script(src="http://www.yzx.com/js/template.js")
+  script(src="http://www.yzx.com/js/lib/owl.carousel.min.js")
   script.
     $(function(){
       $('#sliders').owlCarousel({

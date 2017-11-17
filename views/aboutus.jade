@@ -5,16 +5,16 @@ block title
   meta(name="keywords", content="新能源汽车、新能源电动车、低速电动车、低速电动汽车、电动小汽车、四轮电动汽车、电动汽车代理、电动代步车、新能源电动汽车价格、老年电动车、电动车配件厂家、电动车配件大全、电动车配件批发厂家、四轮电动车配件、产品快搜新能源电动车、产品快搜网")
   meta(name="description", content="产品快搜新能源电动车网是国内最专业的新能源电动车咨询网站，拥有最全的电动车库、电动车配件库，提供权威的新能源电动车政策新闻、新能源电动车报价、新能源电动车配件等服务信息。是新能源电动车企业产品推广、品牌宣传、拓展市场、网络推广的第一选择。为你购买新能源电动车整车和配件提供专业的、有效的价值信息。")
 append link
-  link(rel="stylesheet", href="/css/owl.carousel.min.css")
-  link(rel="stylesheet", href="/css/owl.theme.default.min.css")
-  link(rel="stylesheet", href="/css/main.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/owl.carousel.min.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/owl.theme.default.min.css")
+  link(rel="stylesheet", href="http://www.yzx.com/css/main.css")
 block content
   .main-body
     section
       img(src='/img/banner.jpg')
     section.main-content
       .content-left
-        .btn-group-vertical
+        .navs.btn-group-vertical
           a.btn.btn-default(href='') 关于我们
           a.btn.btn-default(href='') 公司简介
           a.btn.btn-default(href='') 校长介绍
@@ -30,11 +30,11 @@ block content
             li
               a(href='#') 首页
             li.active 首页
-        .text=!
+        div!= cate[0].detail
 append script
-  script(src="/js/lib/mustache.min.js")
-  script(src="/js/template.js")
-  script(src="/js/lib/owl.carousel.min.js")
+  script(src="http://www.yzx.com/js/lib/mustache.min.js")
+  script(src="http://www.yzx.com/js/template.js")
+  script(src="http://www.yzx.com/js/lib/owl.carousel.min.js")
   script.
     $(function(){
       $('#sliders').owlCarousel({
