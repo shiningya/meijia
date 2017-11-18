@@ -5,13 +5,13 @@ footer
         .link-wrapper.clearfix
           span 网站导航：
           .links
-            a.link(title='首页',href='',target='_blank') 首页
-            a.link(title='关于我们',href='',target='_blank') 关于我们
-            a.link(title='课程设置',href='',target='_blank') 课程设置
-            a.link(title='名师团队',href='',target='_blank') 名师团队
-            a.link(title='学校动态',href='',target='_blank') 学校动态
-            a.link(title='在线报名',href='',target='_blank') 在线报名
-            a.link(title='网站地图',href='',target='_blank') 网站地图
+            a.link(title='首页',href='') 首页
+            a.link(title='关于我们',href='') 关于我们
+            a.link(title='课程设置',href='') 课程设置
+            a.link(title='名师团队',href='') 名师团队
+            a.link(title='学校动态',href='') 学校动态
+            a.link(title='在线报名',href='') 在线报名
+            a.link(title='网站地图',href='') 网站地图
       .friend-link
         .link-wrapper.clearfix
           span 友情链接：
@@ -21,6 +21,9 @@ footer
             a.link(title='微整形美美容培训',href='' rel='nofollow',target='_blank') 微整形美美容培训
             a.link(title='学习视频网',href='' rel='nofollow',target='_blank') 学习视频网
     .site-copyright
-      p.tel  联系方式：
-      p.address  学院地址：中国●郑州市建设路嵩山路泰隆大厦10楼1007-1007室
+      p.tel
+        span 联系方式：#{contact.tel}
+        span #{contact.contact1}
+        span #{contact.contact2}
+      p.address  学院地址：#{contact.address}
         span.copyright  版权所有：胭脂雪美甲 豫ICP证030173号

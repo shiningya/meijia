@@ -1,9 +1,9 @@
 extends layout
 
 block title
-  title= '产品快搜-新能源电动车'
-  meta(name="keywords", content="新能源汽车、新能源电动车、低速电动车、低速电动汽车、电动小汽车、四轮电动汽车、电动汽车代理、电动代步车、新能源电动汽车价格、老年电动车、电动车配件厂家、电动车配件大全、电动车配件批发厂家、四轮电动车配件、产品快搜新能源电动车、产品快搜网")
-  meta(name="description", content="产品快搜新能源电动车网是国内最专业的新能源电动车咨询网站，拥有最全的电动车库、电动车配件库，提供权威的新能源电动车政策新闻、新能源电动车报价、新能源电动车配件等服务信息。是新能源电动车企业产品推广、品牌宣传、拓展市场、网络推广的第一选择。为你购买新能源电动车整车和配件提供专业的、有效的价值信息。")
+  title 郑州胭脂雪美甲培训学校_郑州美甲培训_郑州美甲学校_美甲化妆培训_美甲半永久培训_郑州美甲培训哪家好
+  meta(name="keywords", content="胭脂雪美甲培训,郑州美甲培训,郑州美甲学校,郑州美甲培训学校,美甲培训,美甲学校,郑州美甲化妆培训学校,河南美甲培训,郑州专业美甲培训学校,河南美甲学校,郑州半永久培训学校,纹绣培训,郑州半永久培训,郑州纹绣培训,郑州专业美甲化妆培训")
+  meta(name="description", content="河南郑州胭脂雪美妆学院，开设精品美甲，化妆，纹绣专业。专注，专心的教学品质，为您的未来提供保障。小班授课，实战教学，终身免费进修，咨询来电0371-56608987报名优惠中...")
 append link
   link(rel="stylesheet", href="http://www.yzx.com/css/owl.carousel.min.css")
   link(rel="stylesheet", href="http://www.yzx.com/css/owl.theme.default.min.css")
@@ -16,25 +16,26 @@ block content
       .content-left
         .navs.btn-group-vertical
           a.btn.btn-default(href='') 学员风采
-          a.btn.btn-default(href='') 学员合影
-          a.btn.btn-default(href='') 课堂一角
-          a.btn.btn-default(href='') 学员作品
-          a.btn.btn-default(href='') 创业学员
+          a.btn.btn-default(href='/state/xyhy') 学员合影
+          a.btn.btn-default(href='/state/ktyj') 课堂一角
+          a.btn.btn-default(href='/state/xyzp') 学员作品
+          a.btn.btn-default(href='/state/cyxy') 创业学员
           a.btn.btn-default(href='') 作品展示
       .content-right
         .content-header
-          span.title
+          span.title #{curcate}
           ul.breadcrumb
-            li
+            li 当前位置：
               a(href='#') 首页
             li
-              a(href='#') 首页
-            li.active 首页
+              a(href='#') 关于我们
+            li.active #{curcate}
         .state-content
           .preview-wrapper
             .preview
               .main-img.picZoomer
                 img(src='#{cate[0].pic}',alt='#{cate[0].title}')
+                p.pic-title #{cate[0].title}
               .spec-list
                 .spec-items.J-img-list
                   ul#owl-sm.owl-carousel
@@ -49,13 +50,15 @@ append script
     $(function(){
       $('#owl-sm').owlCarousel({
         items: 4,
-        autoplay: true,
-        loop: true,
-        autoplaySpeed: 800,
+        nav: true,
+        navText: ['&#xe665;','&#xe600;'],
+        navClass: ['owl-prev icon iconfont','owl-next icon iconfont'],
+        margin: 20,
         responsive: false
       })
       $('.J-img-list li').hover(function(event) {
         var $pic = $(this).find('img');
         $('.main-img img').attr('src', $pic.attr('src'));
+        $('.main-img .pic-title').html($pic.attr('alt'));
       });
     })

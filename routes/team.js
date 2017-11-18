@@ -2,6 +2,7 @@ var express = require('express');
 var axios = require('axios');
 var router = express.Router();
 
+
 /* GET users listing. */
 router.get('/:cate', function (req, res, next) {
     var cate = req.params.cate;

@@ -41,7 +41,7 @@ img{
 
 /* 导航区 */
 .nav-wrapper{
-	height: 48px;
+	height: 52px;
 	min-width: 1260px;
 	background-color: #464b4d;
 }
@@ -51,13 +51,13 @@ img{
 }
 .nav-list li{
 	display: inline-block;
-	width: 142px;
+	width: 190px;
 	line-height: 47px;
 	text-align: center;
 }
 .nav-list li a{
 	color: #fff;
-	font-size: 18px;
+	font-size: 26px;
 }
 .nav-list li a:hover{
 	color: #da3a4d;
@@ -164,6 +164,9 @@ footer .site-copyright p {
 	text-align: center;
 	margin-bottom: 6px;
 	font-size: 16px;
+}
+footer .site-copyright .tel span {
+	margin-left: 30px;
 }
 
 

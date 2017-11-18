@@ -1,7 +1,7 @@
 .main-body .main-content {
     display: flex;
     width: 1250px;
-    margin: 0 auto;
+    margin: 50px auto;
 }
 .main-body .main-content .content-left {
     flex: 0 0 310px;
@@ -12,8 +12,8 @@
     margin-left: 20px;
     border: 1px solid #dbdbdb;
 }
-.main-content .navs {
-    width: 310px;
+.main-content {
+    margin-top: 50px;
 }
 .main-content .navs a.btn {
     display: inline-block;
@@ -28,8 +28,30 @@
     background-color: #5e5e5e;
     color: #fff;
 }
+.main-content .content-header {
+    line-height: 50px;
+    margin: 0 30px;
+    border-bottom: 1px solid #d3d3d3;
+}
+.main-content .content-header .title {
+    font-size: 22px;
+    color: #606060;
+}
+.main-content .content-header .breadcrumb {
+    float: right;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+.main-content .content-header .breadcrumb a {
+    color: #606060;
+}
 
 
+.state-content {
+    margin-top: 70px;
+}
 .state-content .main-img {
     width: 550px;
     margin: 0 auto;
@@ -37,8 +59,12 @@
 .state-content .spec-list {
     width: 800px;
     margin: 0 auto;
+    border-top: 2px dotted #c2c2c2;
 }
 
+.team-content {
+    margin-top: 40px;
+}
 .team-content .list-content {
     display: flex;
     flex-wrap: wrap;
@@ -48,4 +74,40 @@
     width: 260px;
     flex: 0 0 260px;
     margin: 0 0 20px 20px;
+}
+
+.state-content .main-img .pic-title {
+    line-height: 48px;
+    text-align: center;
+    font-size: 16px;
+    color: #404040;
+}
+#owl-sm {
+    position: relative;
+    width: 668px;
+    margin: 10px auto 100px;
+    padding-top: 30px;
+}
+#owl-sm .owl-nav .iconfont {
+    font-size: 60px;
+    position: absolute;
+    top: 40px;
+    color: #e5e5e5;
+}
+#owl-sm .owl-nav .owl-prev {
+    left: -60px;
+}
+#owl-sm .owl-nav .owl-next {
+    right: -60px;
+}
+
+.course-content {
+    margin: 40px 0;
+}
+.course-content .courses {
+    width: 800px;
+    margin: 0 auto;
+}
+.course-content .courses .course {
+    margin-bottom: 20px;
 }
