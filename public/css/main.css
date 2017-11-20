@@ -111,3 +111,16 @@
 .course-content .courses .course {
     margin-bottom: 20px;
 }
+
+.apply-wrapper {
+    width: 900px;
+    margin: 70px auto;
+}
+.apply-wrapper label.control-label {
+    font-size: 16px;
+    color: #404040;
+    font-weight: normal;
+}
+.apply-wrapper .form-control {
+    border-radius: 0;
+}

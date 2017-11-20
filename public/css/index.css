@@ -78,6 +78,7 @@
 }
 .course .course-contact {
 	padding: 30px 0;
+	margin-bottom: 40px;
 	border-top: 2px dotted #bdbdbd;
 	border-bottom: 2px dotted #bdbdbd;
 }
@@ -119,9 +120,13 @@
 
 .works, .highlights, .features {
 	padding: 20px 0 40px;
-	margin-top: 40px;
 	font-size: 0;
 	line-height: 0;
+}
+.works .content-header,
+.highlights .content-header,
+.features .content-header {
+	margin: 0;
 }
 
 .works {

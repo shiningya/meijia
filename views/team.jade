@@ -5,9 +5,9 @@ block title
   meta(name="keywords", content="胭脂雪美甲培训,郑州美甲培训,郑州美甲学校,郑州美甲培训学校,美甲培训,美甲学校,郑州美甲化妆培训学校,河南美甲培训,郑州专业美甲培训学校,河南美甲学校,郑州半永久培训学校,纹绣培训,郑州半永久培训,郑州纹绣培训,郑州专业美甲化妆培训")
   meta(name="description", content="河南郑州胭脂雪美妆学院，开设精品美甲，化妆，纹绣专业。专注，专心的教学品质，为您的未来提供保障。小班授课，实战教学，终身免费进修，咨询来电0371-56608987报名优惠中...")
 append link
-  link(rel="stylesheet", href="http://www.yzx.com/css/owl.carousel.min.css")
-  link(rel="stylesheet", href="http://www.yzx.com/css/owl.theme.default.min.css")
-  link(rel="stylesheet", href="http://www.yzx.com/css/main.css")
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.carousel.min.css")
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.theme.default.min.css")
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/main.css")
 block content
   .main-body
     section
@@ -15,31 +15,29 @@ block content
     section.main-content
       .content-left
         .navs.btn-group-vertical
-          a.btn.btn-default(href='') 关于我们
-          a.btn.btn-default(href='') 公司简介
-          a.btn.btn-default(href='') 校长介绍
-          a.btn.btn-default(href='') 资质荣誉
-          a.btn.btn-default(href='') 学校环境
+          a.btn.btn-default(href='javascript:;') 关于我们
+          a.btn.btn-default(href='/aboutus/gsjj') 公司简介
+          a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
+          a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
+          a.btn.btn-default(href='/aboutus/xxhj') 学校环境
           a.btn.btn-default(href='') 作品展示
       .content-right
         .content-header
           span.title 师资力量
           ul.breadcrumb
             li 当前位置：
-              a(href='#') 首页
+              a(href='/') 首页
             li.active 师资力量
         .team-content
           ul.list-content
             each item in cate
               li.list-item
                 a(href='javascript:;',title='#{item.title}',target='_blank')
-                  //- .detail
-                    p.desc #{item.title}
                   img(src='#{item.pic}',alt='#{item.title}')
 append script
-  script(src="http://www.yzx.com/js/lib/mustache.min.js")
-  script(src="http://www.yzx.com/js/template.js")
-  script(src="http://www.yzx.com/js/lib/owl.carousel.min.js")
+  script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
+  script(src="http://yzx.cpkso.cn/js/template.js")
+  script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
   script.
     $(function(){
       $('#sliders').owlCarousel({
