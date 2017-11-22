@@ -1,0 +1,90 @@
+extends layout
+
+block title
+  title 郑州胭脂雪美甲培训学校_郑州美甲培训_郑州美甲学校_美甲化妆培训_美甲半永久培训_郑州美甲培训哪家好
+  meta(name="keywords", content="胭脂雪美甲培训,郑州美甲培训,郑州美甲学校,郑州美甲培训学校,美甲培训,美甲学校,郑州美甲化妆培训学校,河南美甲培训,郑州专业美甲培训学校,河南美甲学校,郑州半永久培训学校,纹绣培训,郑州半永久培训,郑州纹绣培训,郑州专业美甲化妆培训")
+  meta(name="description", content="河南郑州胭脂雪美妆学院，开设精品美甲，化妆，纹绣专业。专注，专心的教学品质，为您的未来提供保障。小班授课，实战教学，终身免费进修，咨询来电0371-56608987报名优惠中...")
+append link
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.carousel.min.css")
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.theme.default.min.css")
+  link(rel="stylesheet", href="http://yzx.cpkso.cn/css/index.css")
+block content
+  .main-body
+    #sliders.owl-carousel.owl-theme(style='width: 100%;position:relative;')
+      for slider,index in sliders
+        case index
+          when 0
+            .item.active
+              a(href='javascript:;',title='#{slider.title}',target='_blank')
+                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
+          default
+            .item
+              a(href='javascript:;',title='#{slider.title}',target='_blank')
+                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
+    section.banner
+      img(src='/img/mobile/slider-down.jpg')
+    section.intro
+      .section-content
+        .content-body
+          .intro-img
+            img(src='/img/mobile/tower.jpg')
+          .intro-container
+            p.intro-content 在日本，美甲已经司空见惯，当一个新的美甲技术出现的时候，日本女生显然没有中国女生那么大的反应，其实美甲在中国是有很大潜力的，处于上升阶段，一般模式都是市场化商业化快速消费，很少有人真正的去做事，真正的在美业这件事上付出想要攀岩登顶，当然最终我们还是要落俗，毕竟还是要服务到一线，需要被消费者肯定，但是我希望以后我们是在做事，提高消费者的品味能力，继而更好的通过美甲彰显自己。
+    section.course
+      .section-content
+        .content-header
+          img(src='/img/mobile/course-title.png')
+        .content-body
+          .kc
+            each course in kc
+              a.kc-item(href='')
+                img(src='#{course.pic}' alt='#{course.title}')
+    section.banner
+      img(src='/img/mobile/teacher.jpg')
+    section.works
+      .section-content
+        .content-header
+          img(src='/img/mobile/works-title.png')
+        .zs
+          each work in zs
+            a.zs-item(href='')
+              img(src='#{work.pic}',alt='#{work.title}')
+    section.banner
+      img(src='/img/mobile/advantage.jpg')
+    section.highlights
+      .section-content
+        .content-header
+          img(src='/img/mobile/hx-title.png')
+        .hx.clearfix
+          each figure in hx
+            a.hx-item(href='')
+              img(src='#{figure.pic}',alt='#{figure.title}')
+    section.features
+      .section-content
+        .content-header
+          img(src='/img/mobile/state-title.png')
+        .fc
+          .fc-sm.clearfix
+            each figure,index in fc
+              if index<2
+                a.fc-item(href='')
+                  img(src='#{figure.pic}',alt='#{figure.title}')
+          .fc-lg
+            each figure,index in fc
+              if index>=2
+                a.fc-item(href='')
+                  img(src='#{figure.pic}',alt='#{figure.title}')
+append script
+  script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
+  script(src="http://yzx.cpkso.cn/js/template.js")
+  script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
+  script.
+    $(function(){
+      $('#sliders').owlCarousel({
+        items: 1,
+        autoplay: true,
+        loop: true,
+        autoplaySpeed: 800,
+        responsive: false
+      })
+    })

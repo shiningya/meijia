@@ -1,0 +1,197 @@
+/* 覆盖bootstrap轮播图默认样式 */
+@media screen and (min-width: 768px) {
+	.carousel-indicators {
+		bottom: 0;
+	}
+}
+/* 大轮播图 */
+#sliders .owl-dots{
+	position: absolute;
+	bottom: 10px;
+	right: 5%;
+}
+#sliders .owl-dots span{
+	border-radius: 0;
+	margin: 4px;
+	background-color: #fff;
+	border: none;
+	transform:rotate(-45deg);
+	opacity: 1;
+}
+#sliders .owl-dots span:hover,
+#sliders .owl-dot.active span{
+	width: 12px;
+	height: 12px;
+	border: none;
+	background-color: #da3a4d;
+}
+.main-body .section-content {
+	width: 100%;
+}
+.main-body .section-content .content-header {
+	text-align: center;
+	margin: 20px 0;
+}
+.main-body .intro .content-body {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 90%;
+}
+.intro .intro-img {
+	flex: 3;
+}
+.intro .intro-container {
+	flex: 5;
+	margin-left: 4%;
+}
+.intro .intro-title {
+	font-size: 26px;
+}
+.intro .intro-content {
+	font-size: 10px;
+	line-height: 1.2;
+}
+
+.course .content-body {
+	width: 80%;
+	margin: 0 auto;
+}
+.course .kc .kc-item {
+	display: inline-block;
+	padding: 14px 0;
+	border-top: 2px dotted #bbb;
+	border-bottom: 2px dotted #bbb;
+}
+.course .kc .kc-item:first-child {
+	border-bottom: none;
+}
+
+.works, .highlights, .features {
+	padding: 20px 0 40px;
+	font-size: 0;
+	line-height: 0;
+}
+.works .content-header,
+.highlights .content-header,
+.features .content-header {
+	margin: 0;
+}
+
+.works .zs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.works .zs .zs-item {
+	flex: 1;
+	display: inline-block;
+	width: 20%;
+}
+.works .zs a:hover img {
+	transform: scale(1.2);
+}
+
+.highlights {
+	background-color: #fff0f7;
+}
+.highlights .hx, .features .fc {
+	width: 1210px;
+	margin: 0 auto;
+}
+.highlights .hx .hx-item {
+	display: inline-block;
+	width: 380px;
+	height: 254px;
+	overflow: hidden;
+}
+.highlights .hx .hx-item:first-child {
+	float: left;
+}
+.highlights .hx .hx-item:first-child {
+	width: 446px;
+	height: 508px;
+}
+.highlights .hx .hx-item img {
+	transition: all .3s;
+	height: 100%;
+	width: 100%;
+}
+.highlights .hx .hx-item:hover img {
+	transform: scale(1.2);
+}
+
+.features .fc .fc-item {
+	display: inline-block;
+	overflow: hidden;
+}
+.features .fc .fc-sm {
+	float: left;
+	width: 450px;
+}
+.features .fc .fc-sm .fc-item {
+	width: 450px;
+	height: 270px;
+}
+.features .fc .fc-lg .fc-item {
+	width: 380px;
+	height: 540px;
+}
+.features .fc .fc-item img {
+	transition: all .3s;
+	height: 100%;
+	width: 100%;
+}
+.features .fc .fc-item:hover img {
+	transform: scale(1.2);
+}
+.features .fc .fc-item:nth-child(3),
+.features .fc .fc-item:nth-child(4) {
+	float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

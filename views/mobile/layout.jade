@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    block title
+    block meta
+      meta(name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui")
+      meta(name="format-detection" content="telephone=no, email=no")
+      meta(name="applicable-device" content="mobile")
+    block link
+      link(rel='stylesheet', href='http://yzx.cpkso.cn/css/reset.css')
+      link(rel='stylesheet', href='http://yzx.cpkso.cn/css/bootstrap.min.css')
+      link(rel='stylesheet', href='http://yzx.cpkso.cn/css/base.css')
+  block body
+    header.header
+      .header-left
+        a(href='',target='_blank',title='胭脂雪')
+          img(src='/img/logo.png', alt='胭脂雪')
+      block hright
+        .header-right
+          img(src='/img/mobile/tel.png',alt='tel')
+    include includes/nav.jade
+    block content
+    include includes/footer.jade
+    block script
+      script(src='http://yzx.cpkso.cn/js/lib/jquery-2.0.0.min.js')
+      script(src='http://yzx.cpkso.cn/js/lib/bootstrap.min.js')
