@@ -1,29 +1,12 @@
 footer
   .footer-wrapper
-    .footer-link
-      .site-link
-        .link-wrapper.clearfix
-          span 网站导航：
-          .links
-            a.link(title='首页',href='') 首页
-            a.link(title='关于我们',href='') 关于我们
-            a.link(title='课程设置',href='') 课程设置
-            a.link(title='名师团队',href='') 名师团队
-            a.link(title='学校动态',href='') 学校动态
-            a.link(title='在线报名',href='') 在线报名
-            a.link(title='网站地图',href='') 网站地图
-      .friend-link
-        .link-wrapper.clearfix
-          span 友情链接：
-          .links
-            a.link(title='中国美甲网',href='' rel='nofollow',target='_blank') 中国美甲网
-            a.link(title='河南化妆师协会',href='' rel='nofollow',target='_blank') 河南化妆师协会
-            a.link(title='微整形美美容培训',href='' rel='nofollow',target='_blank') 微整形美美容培训
-            a.link(title='学习视频网',href='' rel='nofollow',target='_blank') 学习视频网
-    .site-copyright
-      p.tel
-        span 联系方式：#{contact.tel}
-        span #{contact.contact1}
-        span #{contact.contact2}
+    .footer-contact
+      .footer-qrcode
+        img(src='http://yzx.cpkso.cn/img/mobile/qrcode.png')
+      .contact
+        p.tel-title 胭脂雪咨询报名热线：
+        p.tel #{contact.tel}
+        p.phone #{contact.contact1}
+        p.phone #{contact.contact2}
+    .site-info
       p.address  学院地址：#{contact.address}
-        span.copyright  版权所有：胭脂雪美甲 豫ICP证030173号

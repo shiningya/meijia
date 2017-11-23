@@ -13,53 +13,38 @@ block content
     section
       img(src='/img/banner.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='javascript:;') 关于我们
-          a.btn.btn-default(href='/aboutus/gsjj') 公司简介
-          a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
-          a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
-          a.btn.btn-default(href='/aboutus/xxhj') 学校环境
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header.clearfix
-          span.title 在线报名
-          ul.breadcrumb
-            li 当前位置：
-              a(href='/') 首页
-            li.active 在线报名
-        .apply-wrapper
-          form.form-horizontal(name='needForm' action='http://yzx.cpkso.cn/backend/contact_leaveMsg' method='post' enctype='multipart/form-data')
-            .form-group.clearfix
-              label.col-sm-2.control-label 课程：
-              .col-sm-4
-                select#s_main.form-control(name='msg.courseName')
-                  option(value='') 请选择课程
-                  option(value='日式美甲全科班') 日式美甲全科班
-                  option(value='日式美甲国际时尚班') 日式美甲国际时尚班
-            .form-group.clearfix
-              label.col-sm-2.control-label(for='pname') 姓名：
-              .col-sm-4
-                input#pname.form-control(type='text',name='msg.name')
-            .form-group.clearfix
-              label.col-sm-2.control-label(for='pname') 来自：
-              .col-sm-4
-                input#pname.form-control(type='text',name='msg.address')
-            .form-group.clearfix
-              label.col-sm-2.control-label(for='pname') 手机：
-              .col-sm-4
-                input#pname.form-control(type='text',name='msg.tel')
-            .form-group.clearfix
-              label.col-sm-2.control-label(for='pname') 邮箱：
-              .col-sm-4
-                input#pname.form-control(type='text',name='msg.email')
-            .form-group.clearfix
-              label.col-sm-2.control-label 备注：
-              .col-sm-4
-                textarea.form-control(name='msg.brief',rows='3')
-            .form-group.clearfix
-              .col-sm-offset-3.col-sm-2
-                button.release-btn.btn.btn-danger(type='submit') 提交报名
+      .apply-wrapper
+        form.form-horizontal(name='needForm' action='http://yzx.cpkso.cn/backend/contact_leaveMsg' method='post' enctype='multipart/form-data')
+          .form-group.clearfix
+            label.col-sm-2.control-label 课程：
+            .col-sm-4
+              select#s_main.form-control(name='msg.courseName')
+                option(value='') 请选择课程
+                option(value='日式美甲全科班') 日式美甲全科班
+                option(value='日式美甲国际时尚班') 日式美甲国际时尚班
+          .form-group.clearfix
+            label.col-sm-2.control-label(for='pname') 姓名：
+            .col-sm-4
+              input#pname.form-control(type='text',name='msg.name')
+          .form-group.clearfix
+            label.col-sm-2.control-label(for='pname') 来自：
+            .col-sm-4
+              input#pname.form-control(type='text',name='msg.address')
+          .form-group.clearfix
+            label.col-sm-2.control-label(for='pname') 手机：
+            .col-sm-4
+              input#pname.form-control(type='text',name='msg.tel')
+          .form-group.clearfix
+            label.col-sm-2.control-label(for='pname') 邮箱：
+            .col-sm-4
+              input#pname.form-control(type='text',name='msg.email')
+          .form-group.clearfix
+            label.col-sm-2.control-label 备注：
+            .col-sm-4
+              textarea.form-control(name='msg.brief',rows='3')
+          .form-group.clearfix
+            .col-sm-offset-3.col-sm-2
+              button.release-btn.btn.btn-danger(type='submit') 提交报名
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

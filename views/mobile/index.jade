@@ -49,12 +49,40 @@ block content
           each work in zs
             a.zs-item(href='')
               img(src='#{work.pic}',alt='#{work.title}')
-    section.banner
-      img(src='/img/mobile/advantage.jpg')
+    section.advantage
+      .section-content
+        .content-header
+          img(src='/img/mobile/advan-title.png')
+        .advan-container
+          .advan-item.advan-item-left.clearfix
+            img(src='/img/mobile/advan-1.jpg')
+            .detail
+              p.title 优势一：国际化教育
+              p.desc 掌握国际美甲最新技术，不出国门，与国际美业同步！
+          .advan-item.advan-item-right.clearfix
+            img(src='/img/mobile/advan-1.jpg')
+            .detail
+              p.title 优势一：国际化教育
+              p.desc 掌握国际美甲最新技术，不出国门，与国际美业同步！
+          .advan-item.advan-item-left.clearfix
+            img(src='/img/mobile/advan-1.jpg')
+            .detail
+              p.title 优势一：国际化教育
+              p.desc 掌握国际美甲最新技术，不出国门，与国际美业同步！
+          .advan-item.advan-item-right.clearfix
+            img(src='/img/mobile/advan-1.jpg')
+            .detail
+              p.title 优势一：国际化教育
+              p.desc 掌握国际美甲最新技术，不出国门，与国际美业同步！
+          .advan-item.advan-item-left.clearfix
+            img(src='/img/mobile/advan-1.jpg')
+            .detail
+              p.title 优势一：国际化教育
+              p.desc 掌握国际美甲最新技术，不出国门，与国际美业同步！
     section.highlights
       .section-content
         .content-header
-          img(src='/img/mobile/hx-title.png')
+          img(src='/img/mobile/highlight-title.png')
         .hx.clearfix
           each figure in hx
             a.hx-item(href='')
@@ -62,7 +90,7 @@ block content
     section.features
       .section-content
         .content-header
-          img(src='/img/mobile/state-title.png')
+          img(src='/img/mobile/features-title.png')
         .fc
           .fc-sm.clearfix
             each figure,index in fc
@@ -74,6 +102,10 @@ block content
               if index>=2
                 a.fc-item(href='')
                   img(src='#{figure.pic}',alt='#{figure.title}')
+    section.apply
+      .section-content
+        .content-header
+          img(src='/img/mobile/apply-title.png')
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

@@ -11,29 +11,14 @@ append link
 block content
   .main-body
     section
-      img(src='/img/team.jpg')
+      img(src='/img/mobile/team-banner.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='javascript:;') 关于我们
-          a.btn.btn-default(href='/aboutus/gsjj') 公司简介
-          a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
-          a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
-          a.btn.btn-default(href='/aboutus/xxhj') 学校环境
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header
-          span.title 师资力量
-          ul.breadcrumb
-            li 当前位置：
-              a(href='/') 首页
-            li.active 师资力量
-        .team-content
-          ul.list-content
-            each item in cate
-              li.list-item
-                a(href='javascript:;',title='#{item.title}',target='_blank')
-                  img(src='#{item.pic}',alt='#{item.title}')
+      .team-content
+        ul.list-content
+          each item in cate
+            li.list-item
+              a(href='javascript:;',title='#{item.title}',target='_blank')
+                img(src='#{item.pic}',alt='#{item.title}')
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

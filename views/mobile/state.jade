@@ -10,38 +10,13 @@ append link
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/main.css")
 block content
   .main-body
-    section
-      img(src='/img/state.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='') 学员风采
-          a.btn.btn-default(href='/state/xyhy') 学员合影
-          a.btn.btn-default(href='/state/ktyj') 课堂一角
-          a.btn.btn-default(href='/state/xyzp') 学员作品
-          a.btn.btn-default(href='/state/cyxy') 创业学员
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header
-          span.title #{curcate}
-          ul.breadcrumb
-            li 当前位置：
-              a(href='/') 首页
-            li
-              a(href='/state/xyhy') 学校动态
-            li.active #{curcate}
-        .state-content
-          .preview-wrapper
-            .preview
-              .main-img.picZoomer
-                img(src='#{cate[0].pic}',alt='#{cate[0].title}')
-                p.pic-title #{cate[0].title}
-              .spec-list
-                .spec-items.J-img-list
-                  ul#owl-sm.owl-carousel
-                    each item in cate
-                      li.item
-                        img(src='#{item.pic}',alt='#{item.title}')
+      .state-content
+        .spec-list
+          ul#owl-sm.owl-carousel
+            each item in cate
+              li.item
+                img(src='#{item.pic}',alt='#{item.title}')
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")
@@ -49,16 +24,11 @@ append script
   script.
     $(function(){
       $('#owl-sm').owlCarousel({
-        items: 4,
+        items: 1,
         nav: true,
         navText: ['&#xe665;','&#xe600;'],
         navClass: ['owl-prev icon iconfont','owl-next icon iconfont'],
         margin: 20,
         responsive: false
       })
-      $('.J-img-list li').hover(function(event) {
-        var $pic = $(this).find('img');
-        $('.main-img img').attr('src', $pic.attr('src'));
-        $('.main-img .pic-title').html($pic.attr('alt'));
-      });
     })

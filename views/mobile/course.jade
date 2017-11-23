@@ -10,25 +10,9 @@ append link
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/main.css")
 block content
   .main-body
-    section
-      img(src='/img/course.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='') 精品课程
-          a.btn.btn-default(href='') 日式美甲全科班
-          a.btn.btn-default(href='') 日式美甲国际时尚班
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header
-          span.title 精品课程
-          ul.breadcrumb
-            li 当前位置：
-              a(href='/') 首页
-            li 当前位置：
-              a(href='/course/rqkb') 精品课程
-            li.active #{curcate}
-        div!= cate[0].detail
+      each kc in course
+        div!= kc.detail
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

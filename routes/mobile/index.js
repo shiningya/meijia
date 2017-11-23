@@ -1,13 +1,14 @@
 var express = require('express');
 var axios = require('axios');
 var router = express.Router();
+var navs = require('../../navs.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     axios.all([getSliders(), getKC(), getZS(), getHX(), getFC(), getQQ(), getContact()])
         .then(axios.spread(function (sliders, kc, zs, hx, fc, qq, contact) {
             var data = {};
-            data.curnav = 'index';
+            data.navs = navs.index;
             data.sliders = sliders.data.response.data;
             data.kc = kc.data.response.data;
             data.zs = zs.data.response.data;

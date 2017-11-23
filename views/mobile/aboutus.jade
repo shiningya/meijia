@@ -11,26 +11,9 @@ append link
 block content
   .main-body
     section
-      img(src='/img/aboutus.jpg')
+      img(src='/img/mobile/aboutus-banner.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='javascript:;') 关于我们
-          a.btn.btn-default(href='/aboutus/gsjj') 公司简介
-          a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
-          a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
-          a.btn.btn-default(href='/aboutus/xxhj') 学校环境
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header
-          span.title #{curcate}
-          ul.breadcrumb
-            li 当前位置：
-              a(href='/') 首页
-            li
-              a(href='/aboutus/gsjj') 关于我们
-            li.active #{curcate}
-        div!= cate[0].detail
+      div.article-container!= cate[0].detail
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

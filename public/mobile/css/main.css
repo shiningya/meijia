@@ -1,53 +1,13 @@
 .main-body .main-content {
-    display: flex;
-    width: 1250px;
     margin: 50px auto;
-}
-.main-body .main-content .content-left {
-    flex: 0 0 310px;
-    width: 310px;
-}
-.main-body .main-content .content-right {
-    flex: 0 0 920px;
-    margin-left: 20px;
-    border: 1px solid #dbdbdb;
 }
 .main-content {
     margin-top: 50px;
 }
-.main-content .navs a.btn {
-    display: inline-block;
-    line-height: 54px;
-    font-size: 22px;
+.main-content .article-container {
+    width: 90%;
+    margin: 0 auto;
 }
-.main-content .navs a.btn:first-child,
-.main-content .navs a.btn:last-child {
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 0;
-    background-color: #5e5e5e;
-    color: #fff;
-}
-.main-content .content-header {
-    line-height: 50px;
-    margin: 0 30px;
-    border-bottom: 1px solid #d3d3d3;
-}
-.main-content .content-header .title {
-    font-size: 22px;
-    color: #606060;
-}
-.main-content .content-header .breadcrumb {
-    float: right;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-}
-.main-content .content-header .breadcrumb a {
-    color: #606060;
-}
-
 
 .state-content {
     margin-top: 70px;

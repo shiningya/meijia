@@ -1,0 +1,122 @@
+{
+    "index": [
+        {
+            "url": "/",
+            "name": "首页"
+        },
+        {
+            "url": "/aboutus/gsjj",
+            "name": "关于我们"
+        },
+        {
+            "url": "/course",
+            "name": "精品课程"
+        },
+        {
+            "url": "/team/szll",
+            "name": "名师团队"
+        },
+        {
+            "url": "/state/xyhy",
+            "name": "学校动态"
+        },
+        {
+            "url": "/apply",
+            "name": "在线报名"
+        }
+    ],
+    "aboutus": [
+        {
+            "url": "javascript:history.go(-1)",
+            "name": "&#xe601;" 
+        },
+        {
+            "url": "/aboutus/gsjj",
+            "name": "公司简介"
+        },
+        {
+            "url": "/aboutus/xzjs",
+            "name": "校长介绍"
+        },
+        {
+            "url": "/aboutus/zzry",
+            "name": "资质荣誉"
+        },
+        {
+            "url": "/aboutus/xxhj",
+            "name": "学校环境"
+        },
+        {
+            "url": "/",
+            "name": "&#xe60e;"
+        }
+    ],
+    "course": [
+        {
+            "url": "javascript:history.go(-1)",
+            "name": "&#xe601;"
+        },
+        {
+            "url": "/course",
+            "name": "精品课程" 
+        },
+        {
+            "url": "/",
+            "name": "&#xe60e;"
+        }
+    ],
+    "team": [
+        {
+            "url": "javascript:history.go(-1)",
+            "name": "&#xe601;"
+        },
+        {
+            "url": "/team/szll",
+            "name": "名师团队" 
+        },
+        {
+            "url": "/",
+            "name": "&#xe60e;"
+        }
+    ],
+    "state": [
+        {
+            "url": "javascript:history.go(-1)",
+            "name": "&#xe601;"
+        },
+        {
+            "url": "/state/xyhy",
+            "name": "学员合影" 
+        },
+        {
+            "url": "/state/ktyj",
+            "name": "课堂一角" 
+        },
+        {
+            "url": "/state/xyzp",
+            "name": "学员作品" 
+        },
+        {
+            "url": "/state/cyxy",
+            "name": "创业学员" 
+        },
+        {
+            "url": "/",
+            "name": "&#xe60e;"
+        }
+    ],
+    "apply": [
+        {
+            "url": "javascript:history.go(-1)",
+            "name": "&#xe601;"
+        },
+        {
+            "url": "/apply",
+            "name": "在线报名"
+        },
+        {
+            "url": "/",
+            "name": "&#xe60e;"
+        }
+    ]
+}

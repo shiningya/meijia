@@ -14,12 +14,17 @@ html
   block body
     header.header
       .header-left
-        a(href='',target='_blank',title='胭脂雪')
+        a(href='/',title='胭脂雪')
           img(src='/img/logo.png', alt='胭脂雪')
       block hright
         .header-right
           img(src='/img/mobile/tel.png',alt='tel')
-    include includes/nav.jade
+    block nav
+      nav.nav-wrapper
+        ul.nav-list
+          each nav in navs
+            li
+              a.icon.iconfont(href='#{nav.url}', title='首页')!= nav.name
     block content
     include includes/footer.jade
     block script

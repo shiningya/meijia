@@ -109,66 +109,41 @@ img{
 
 
 /* 页尾 */
-footer {
-	margin-top: 60px;
-	background-color: #3b3b3b;
-	color: #fff;
-	font-size: 20px;
-}
-footer .footer-wrapper {
-	margin: 0 auto;
-	padding: 40px 0;
-	width: 930px;
-}
-footer .link-wrapper {
-	display: inline;
-	text-align: center;
-}
-footer .link-wrapper span {
-	float: left;
-	padding-top: 6px;
-}
-footer .link-wrapper .links {
-	overflow: hidden;
+.footer-contact {
 	display: flex;
-	flex-wrap: wrap;
+	width: 70%;
+	margin: 0 auto;
 }
-footer .link-wrapper .links a {
-	display: inline-block;
+.footer-contact .footer-qrcode {
+	flex: 1;
 }
-footer .link-wrapper a {
-	color: #fff;
-	padding: 6px 10px;
-	margin: 0 20px 0 0;
-}
-footer .link-wrapper a:hover {
-	color: #db2242;
-}
-footer .footer-info {
-	margin-top: 30px;
-}
-footer .footer-info .contact {
+.footer-contact .contact {
+	flex: 2;
 	margin-left: 10px;
-	color: #666;
 }
-footer .footer-info .contact p span {
-	padding-left: 10px;
-	color: #db2242;
+.footer-contact .contact p {
+	margin-bottom: 0;
+	line-height: 1.8;
 }
-footer .site-link {
-	text-align: left;
+.footer-contact .contact .tel-title {
+	font-size: 12px;
 }
-footer .site-copyright {
-	margin-left: 20px;
-}
-footer .site-copyright p {
-	text-align: center;
-	margin-bottom: 6px;
+.footer-contact .contact .tel {
 	font-size: 16px;
+	color: #ff728a;
 }
-footer .site-copyright .tel span {
-	margin-left: 30px;
+.footer-contact .contact .phone {
+	font-size: 10px;
 }
+.site-info .address {
+	margin: 20px 0 0;
+	text-align: center;
+	font-size: 10px;
+	line-height: 2;
+	background-color: #4a4a4a;
+	color: #fff;
+}
+
 
 
 

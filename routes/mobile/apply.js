@@ -1,13 +1,14 @@
 var express = require('express');
 var axios = require('axios');
 var router = express.Router();
+var navs = require('../../navs.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     axios.all([getContact()])
         .then(axios.spread(function (contact) {
             var data = {};
-            data.curnav = 'apply';
+            data.navs = navs.apply;
             data.contact = contact.data.response.data;
             res.render('mobile/apply', data);
         }));
