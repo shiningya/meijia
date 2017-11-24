@@ -166,3 +166,17 @@ img{
 .owl-theme .owl-controls .owl-pagination {
 	display: none;
 }
+
+
+
+
+/**
+ * Slider CSS
+ */
+.jc-slider {
+    overflow: hidden;
+    width: 100%;
+}
+.jc-slider * {
+    box-sizing:border-box;
+}

@@ -11,25 +11,25 @@ append link
 block content
   .main-body
     section
-      img(src='/img/course.jpg')
+      img(src='/img/team.jpg')
     section.main-content
       .content-left
         .navs.btn-group-vertical
-          a.btn.btn-default(href='javascript:;') 精品课程
-          a.btn.btn-default(href='/course/rqkb') 日式美甲全科班
-          a.btn.btn-default(href='rssb') 日式美甲国际时尚班
+          a.btn.btn-default(href='javascript:;') 关于我们
+          a.btn.btn-default(href='/aboutus/gsjj') 公司简介
+          a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
+          a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
+          a.btn.btn-default(href='/aboutus/xxhj') 学校环境
           a.btn.btn-default(href='javascript:;') 作品展示
         include includes/works-slider.jade
       .content-right
         .content-header
-          span.title 精品课程
+          span.title 师资力量
           ul.breadcrumb
             li 当前位置：
               a(href='/') 首页
-            li 当前位置：
-              a(href='/course/rqkb') 精品课程
-            li.active #{curcate}
-        div!= cate[0].detail
+            li.active 师资力量
+        div!= intro.detail
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

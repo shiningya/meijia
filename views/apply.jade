@@ -20,7 +20,8 @@ block content
           a.btn.btn-default(href='/aboutus/xzjs') 校长介绍
           a.btn.btn-default(href='/aboutus/zzry') 资质荣誉
           a.btn.btn-default(href='/aboutus/xxhj') 学校环境
-          a.btn.btn-default(href='') 作品展示
+          a.btn.btn-default(href='javascript:;') 作品展示
+        include includes/works-slider.jade
       .content-right
         .content-header.clearfix
           span.title 在线报名
@@ -66,11 +67,9 @@ append script
   script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
   script.
     $(function(){
-      $('#sliders').owlCarousel({
-        items: 1,
-        autoplay: true,
-        loop: true,
-        autoplaySpeed: 800,
-        responsive: false
-      })
+      $('.jc-slider').jcSlider({
+          animationIn: 'zoomInUp',
+          animationOut: 'flipOutX',
+          stopOnHover: false
+      });
     })

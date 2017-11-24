@@ -83,6 +83,7 @@ block content
           each figure in hx
             a.hx-item(href='')
               img(src='#{figure.pic}',alt='#{figure.title}')
+              .title #{figure.title}
     section.features
       .section-content
         .content-header
@@ -93,11 +94,13 @@ block content
               if index<2
                 a.fc-item(href='')
                   img(src='#{figure.pic}',alt='#{figure.title}')
+                  .title #{figure.title}
           .fc-lg
             each figure,index in fc
               if index>=2
                 a.fc-item(href='')
                   img(src='#{figure.pic}',alt='#{figure.title}')
+                  .title #{figure.title}
 append script
   script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
   script(src="http://yzx.cpkso.cn/js/template.js")

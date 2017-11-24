@@ -15,12 +15,13 @@ block content
     section.main-content
       .content-left
         .navs.btn-group-vertical
-          a.btn.btn-default(href='') 学员风采
+          a.btn.btn-default(href='javascript:;') 学员风采
           a.btn.btn-default(href='/state/xyhy') 学员合影
           a.btn.btn-default(href='/state/ktyj') 课堂一角
           a.btn.btn-default(href='/state/xyzp') 学员作品
           a.btn.btn-default(href='/state/cyxy') 创业学员
-          a.btn.btn-default(href='') 作品展示
+          a.btn.btn-default(href='javascript:;') 作品展示
+        include includes/works-slider.jade
       .content-right
         .content-header
           span.title #{curcate}
@@ -60,5 +61,10 @@ append script
         var $pic = $(this).find('img');
         $('.main-img img').attr('src', $pic.attr('src'));
         $('.main-img .pic-title').html($pic.attr('alt'));
+      });
+      $('.jc-slider').jcSlider({
+          animationIn: 'zoomInUp',
+          animationOut: 'flipOutX',
+          stopOnHover: false
       });
     })

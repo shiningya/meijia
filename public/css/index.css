@@ -1,8 +1,3 @@
-.header .header-right>img{
-	padding-right: 50px;
-}
-
-
 /* 覆盖bootstrap轮播图默认样式 */
 @media screen and (min-width: 768px) {
 	.carousel-indicators {
@@ -193,6 +188,37 @@
 	width: 380px;
 	height: 540px;
 }
+.highlights .hx .hx-item,
+.features .fc .fc-item {
+	position: relative;
+}
+.highlights .hx .hx-item .title,
+.features .fc .fc-item .title {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 52px;
+	line-height: 52px;
+	font-size: 24px;
+	color: #333;
+	background-color: rgba(255,255,255,.4);
+	text-align: center;
+	z-index: 1;
+	opacity: 0;
+}
+.highlights .hx .hx-item:hover .title,
+.features .fc .fc-item:hover .title {
+	opacity: 1;
+	-webkit-transition: all 1s;
+	-moz-transition: all 1s;
+	transition: all 1s;
+}
+.highlights .hx .hx-item:first-child .title,
+.features .fc .fc-lg .fc-item .title {
+	width: 80%;
+	margin: 0 0 10% 10%;
+}
 .features .fc .fc-item img {
 	transition: all .3s;
 	height: 100%;
@@ -201,53 +227,3 @@
 .features .fc .fc-item:hover img {
 	transform: scale(1.2);
 }
-.features .fc .fc-item:nth-child(3),
-.features .fc .fc-item:nth-child(4) {
-	float: right;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 .main-body .main-content {
-    margin: 50px auto;
+    margin: 20px auto;
 }
 .main-content {
     margin-top: 50px;
@@ -9,17 +9,10 @@
     margin: 0 auto;
 }
 
-.state-content {
-    margin-top: 70px;
-}
-.state-content .main-img {
-    width: 550px;
-    margin: 0 auto;
-}
+
 .state-content .spec-list {
-    width: 800px;
+    width: 70%;
     margin: 0 auto;
-    border-top: 2px dotted #c2c2c2;
 }
 
 .team-content {
@@ -27,13 +20,14 @@
 }
 .team-content .list-content {
     display: flex;
+    width: 84%;
+    margin: 0 auto;
     flex-wrap: wrap;
-    margin-left: 30px;
+    justify-content: space-around;
 }
 .team-content .list-content .list-item {
-    width: 260px;
-    flex: 0 0 260px;
-    margin: 0 0 20px 20px;
+    width: 42%;
+    margin-bottom: 4%;
 }
 
 .state-content .main-img .pic-title {
@@ -44,21 +38,20 @@
 }
 #owl-sm {
     position: relative;
-    width: 668px;
     margin: 10px auto 100px;
     padding-top: 30px;
 }
 #owl-sm .owl-nav .iconfont {
-    font-size: 60px;
+    font-size: 50px;
     position: absolute;
-    top: 40px;
+    top: 80px;
     color: #e5e5e5;
 }
 #owl-sm .owl-nav .owl-prev {
-    left: -60px;
+    left: -50px;
 }
 #owl-sm .owl-nav .owl-next {
-    right: -60px;
+    right: -50px;
 }
 
 .course-content {
