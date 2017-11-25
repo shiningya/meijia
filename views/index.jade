@@ -8,19 +8,21 @@ append link
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.carousel.min.css")
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.theme.default.min.css")
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/index.css")
+  style.
+    .icon {
+      width: 1em; height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+
 block content
   .main-body
     #sliders.owl-carousel.owl-theme(style='width: 100%;margin-bottom: 6px;position:relative;')
-      for slider,index in sliders
-        case index
-          when 0
-            .item.active
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
-          default
-            .item
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
+      each slider in sliders
+        .item
+          a(href='javascript:;',title='#{slider.title}',target='_blank')
+            img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
     section.intro
       .section-content
         .content-header
@@ -42,7 +44,8 @@ block content
               br
               提高消费者的品味能力，继而更好的通过美甲彰显自己。
     section.banner
-      img(src='/img/teacher.jpg')
+      a(href='/team')
+        img(src='/img/teacher.jpg')
     section.course
       .section-content
         .content-header
@@ -50,7 +53,7 @@ block content
         .content-body
           .kc
             each course in kc
-              a.kc-item(href='')
+              a.kc-item(href='/course/rqkb')
                 img(src='#{course.pic}' alt='#{course.title}')
           .course-contact.clearfix
             .qrcode
@@ -71,7 +74,7 @@ block content
           img(src='/img/works-title.png')
         .zs
           each work in zs
-            a.zs-item(href='')
+            a.zs-item(href='/aboutus/gsjj')
               img(src='#{work.pic}',alt='#{work.title}')
     section.banner
       img(src='/img/advantage.jpg')
@@ -81,7 +84,7 @@ block content
           img(src='/img/hx-title.png')
         .hx.clearfix
           each figure in hx
-            a.hx-item(href='')
+            a.hx-item(href='/state/ktyj')
               img(src='#{figure.pic}',alt='#{figure.title}')
               .title #{figure.title}
     section.features
@@ -92,26 +95,54 @@ block content
           .fc-sm.clearfix
             each figure,index in fc
               if index<2
-                a.fc-item(href='')
+                a.fc-item(href='/state/xyhy')
                   img(src='#{figure.pic}',alt='#{figure.title}')
                   .title #{figure.title}
           .fc-lg
             each figure,index in fc
               if index>=2
-                a.fc-item(href='')
+                a.fc-item(href='/state/xyhy')
                   img(src='#{figure.pic}',alt='#{figure.title}')
                   .title #{figure.title}
+  #service
+    a.service-img(href="")
+      img(src="img/service.png")
+    ul.qq-list
+      li.qq-item
+        a.qq(href="http://wpa.qq.com/msgrd?v=3&uin=1144249330&site=qq&menu=yes",target="_blank")
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-qq")
+          span.name 张老师
+      li.qq-item
+        a.qq(href="http://wpa.qq.com/msgrd?v=3&uin=1144249330&site=qq&menu=yes",target="_blank")
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-qq")
+          span.name 张老师
+      li.qq-item
+        a.qq(href="http://wpa.qq.com/msgrd?v=3&uin=1144249330&site=qq&menu=yes",target="_blank")
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-qq")
+          span.name 张老师
+      li.qq-item
+        a.qq(href="http://wpa.qq.com/msgrd?v=3&uin=1144249330&site=qq&menu=yes",target="_blank")
+          svg.icon(aria-hidden="true")
+            use(xlink:href="#icon-qq")
+          span.name 张老师
+    .other-way
+      .wechat
+        img.wechat-qrcode(src="img/wechat.jpg")
+        p 扫描二维码有惊喜
+      a.btn.btn-default 留言咨询
 append script
-  script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
-  script(src="http://yzx.cpkso.cn/js/template.js")
   script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
+  script(src="//at.alicdn.com/t/font_479044_0fdh6o3p9jli8uxr.js")
   script.
     $(function(){
       $('#sliders').owlCarousel({
         items: 1,
-        autoplay: true,
         loop: true,
-        autoplaySpeed: 800,
+        autoplay: true,
+        autoplaySpeed: 100,
         responsive: false
       })
     })

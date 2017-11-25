@@ -11,16 +11,9 @@ append link
 block content
   .main-body
     #sliders.owl-carousel.owl-theme(style='width: 100%;position:relative;')
-      for slider,index in sliders
-        case index
-          when 0
-            .item.active
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
-          default
-            .item
-              a(href='javascript:;',title='#{slider.title}',target='_blank')
-                img(src='#{slider.pic}',style='width:100%',alt='#{slider.title}')
+      .item
+        a(href='javascript:;')
+          img(src='img/mobile/slider-1.jpg',style='width:100%')
     section.banner
       img(src='/img/mobile/slider-down.jpg')
     section.intro
@@ -107,8 +100,6 @@ block content
         .content-header
           img(src='/img/mobile/apply-title.png')
 append script
-  script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
-  script(src="http://yzx.cpkso.cn/js/template.js")
   script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
   script.
     $(function(){

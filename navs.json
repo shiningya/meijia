@@ -21,8 +21,8 @@
             "name": "学校动态"
         },
         {
-            "url": "/apply",
-            "name": "在线报名"
+            "url": "/contactus/gsdz",
+            "name": "联系我们"
         }
     ],
     "aboutus": [
@@ -105,13 +105,17 @@
             "name": "&#xe60e;"
         }
     ],
-    "apply": [
+    "contactus": [
         {
             "url": "javascript:history.go(-1)",
             "name": "&#xe601;"
         },
         {
-            "url": "/apply",
+            "url": "/contactus/gsdz",
+            "name": "公司地址"
+        },
+        {
+            "url": "/contactus/zxbm",
             "name": "在线报名"
         },
         {

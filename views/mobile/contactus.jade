@@ -8,40 +8,108 @@ append link
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.carousel.min.css")
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/owl.theme.default.min.css")
   link(rel="stylesheet", href="http://yzx.cpkso.cn/css/main.css")
+  style.
+    #map img,
+    #map label {
+      max-height: none;
+      max-width: none;
+    }
+  script(src!="http://api.map.baidu.com/api?v=2.0&ak=MFdqTGdnYGRAc7GjEwsGa00KbbIyhQwt")
 block content
   .main-body
-    section
-      img(src='/img/contactus.jpg')
     section.main-content
-      .content-left
-        .navs.btn-group-vertical
-          a.btn.btn-default(href='') 关于我们
-          a.btn.btn-default(href='') 公司简介
-          a.btn.btn-default(href='') 校长介绍
-          a.btn.btn-default(href='') 资质荣誉
-          a.btn.btn-default(href='') 学校环境
-          a.btn.btn-default(href='') 作品展示
-      .content-right
-        .content-header
-          span.title
-          ul.breadcrumb
-            li
-              a(href='#') 首页
-            li
-              a(href='#') 首页
-            li.active 首页
-        div!= cate[0].detail
+      .contact-content
+        if cate==='gsdz'
+          #map.map(style="width:100%;height:460px;border:#ccc solid 1px;font-size:12px")
+        else if cate==='zxbm'
+          .apply-wrapper
+            form.form-horizontal(name='needForm' action='http://yzx.cpkso.cn/backend/contact_leaveMsg' method='post' enctype='multipart/form-data')
+              .form-group.clearfix
+                label.col-xs-3.control-label 课程：
+                .col-xs-9
+                  select#s_main.form-control(name='msg.courseName')
+                    option(value='') 请选择课程
+                    option(value='日式美甲全科班') 日式美甲全科班
+                    option(value='日式美甲国际时尚班') 日式美甲国际时尚班
+              .form-group.clearfix
+                label.col-xs-3.control-label(for='pname') 姓名：
+                .col-xs-9
+                  input#pname.form-control(type='text',name='msg.name')
+              .form-group.clearfix
+                label.col-xs-3.control-label(for='pname') 来自：
+                .col-xs-9
+                  input#pname.form-control(type='text',name='msg.address')
+              .form-group.clearfix
+                label.col-xs-3.control-label(for='pname') 手机：
+                .col-xs-9
+                  input#pname.form-control(type='text',name='msg.tel')
+              .form-group.clearfix
+                label.col-xs-3.control-label(for='pname') 邮箱：
+                .col-xs-9
+                  input#pname.form-control(type='text',name='msg.email')
+              .form-group.clearfix
+                label.col-xs-3.control-label 备注：
+                .col-xs-9
+                  textarea.form-control(name='msg.brief',rows='3')
+              .form-group.clearfix
+                .col-xs-offset-3.col-xs-2
+                  button.release-btn.btn.btn-danger(type='submit') 提交报名
 append script
-  script(src="http://yzx.cpkso.cn/js/lib/mustache.min.js")
-  script(src="http://yzx.cpkso.cn/js/template.js")
-  script(src="http://yzx.cpkso.cn/js/lib/owl.carousel.min.js")
   script.
-    $(function(){
-      $('#sliders').owlCarousel({
-        items: 1,
-        autoplay: true,
-        loop: true,
-        autoplaySpeed: 800,
-        responsive: false
-      })
-    })
+    //创建和初始化地图函数：
+    function initMap() {
+      createMap();//创建地图
+      setMapEvent();//设置地图事件
+      addMapControl();//向地图添加控件
+      addMapOverlay();//向地图添加覆盖物
+    }
+    function createMap() {
+      map = new BMap.Map("map");
+      map.centerAndZoom(new BMap.Point(112.375324, 34.603885), 14);
+    }
+    function setMapEvent() {
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+    function addClickHandler(target, window) {
+      target.addEventListener("click", function () {
+        target.openInfoWindow(window);
+      });
+    }
+    function addMapOverlay() {
+      var markers = [
+        { content: "地址：河南省洛阳市洛龙区军威路1号6楼", title: "洛阳宇能电动车科技有限公司", imageOffset: { width: 0, height: 3 }, position: { lat: 34.603885, lng: 112.375324 } }
+      ];
+      for (var index = 0; index < markers.length; index++) {
+        var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+        var marker = new BMap.Marker(point, {
+          icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+            imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+          })
+        });
+        var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+        marker.setLabel(label);
+        addClickHandler(marker, infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl() {
+      var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+      map.addControl(navControl);
+      //- var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+      //- map.addControl(overviewControl);
+    }
+    var map;
+    initMap();

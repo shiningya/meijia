@@ -1,182 +1,75 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>资讯右侧内容</title>
-    <link href="css/reset.css" rel="stylesheet">
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/base.css" rel="stylesheet">
-    <link href="css/news.css" rel="stylesheet">
-    <style>
-        .content-right {
-            margin: 0;
-            padding: 0
-        }
-
-        .list-unstyled {
-            list-style-type: none;
-            margin: 0;
-        }
-
-        .list-unstyled li {
-            list-style-type: none;
-        }
-    </style>
+  <!--引用百度地图API-->
+  <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=MFdqTGdnYGRAc7GjEwsGa00KbbIyhQwt"></script>
 </head>
 
 <body>
-    <!-- ##########页首########## -->
-
-
-    <!-- 公司logo -->
-
-    <!-- 导航条 -->
-
-
-
-    <!-- ##########页首（end）########## -->
-
-    <!-- ##########主体########## -->
-    <div class="main-body" style="border:none">
-        <!-- 栏目 -->
-        <div class="products">
-            <!-- 公司新闻 -->
-            <div class="content-right">
-                <div id="newsad" class="right4">
-                    <div id="newsA" style="margin-top:20px;" class="ad-item">
-                    </div>
-                    <div class="recommendRead">
-                        <h4>推荐阅读</h4>
-                    </div>
-                    <ul id="newslist" class="list-unstyled zixun-item">
-                    </ul>
-                </div>
-                <div id="aditem" class="right3">
-                    <div id="newsB" class="ad-item">
-                    </div>
-                    <div class="recommendRead">
-                        <h4>最新车型</h4>
-                    </div>
-                    <ul id="newslistB" class="list-unstyled zixun-item">
-                    </ul>
-                </div>
-                <div id="btad" class="ad-item">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ##########主体（end）########## -->
-    <!-- ##########页脚########## -->
-    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script type="text/javascript">
-        !window.jQuery && document.write('<script src="js/lib/jquery-2.0.0.min.js"><\/script>');
-    </script>
-    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
-    <script type="text/javascript" src="js/mustache.min.js"></script>
-    <script>
-
-
-        //资讯详情右侧a
-        $(document).ready(function () {
-            $.ajax({
-                url: 'http://ev.cpkso.com/admin/placeCar_findByAdsUniqueId?ads_unique_id=Z02',
-                type: 'POST',
-                dataType: 'json',
-            })
-            .done(function (data) {
-                var adData = data.response.data;
-                var adtpl = '{{#PlaceCars}}<a href="/cars/{{entity_id}}"  target="_blank"><img src="{{pic}}"></a>{{/PlaceCars}}';
-                var adcontent = Mustache.render(adtpl, adData);
-                var newsad = $('#newsA');
-                newsad.html(adcontent);
-            })
-            //资讯详情右侧B
-            $.ajax({
-                url: 'http://ev.cpkso.com/admin/placeCar_findByAdsUniqueId?ads_unique_id=Z03',
-                type: 'POST',
-                dataType: 'json',
-            })
-            .done(function (data) {
-                var adaData = data.response.data;
-                var adatpl = '{{#PlaceCars}}<a href="/cars/{{entity_id}}"  target="_blank"><img src="{{pic}}" target="_blank"></a>{{/PlaceCars}}';
-                var adacontent = Mustache.render(adatpl, adaData);
-                var newsB = $('#newsB');
-                newsB.html(adacontent);
-            })
-            //资讯详情右侧c
-            $.ajax({
-                url: 'http://ev.cpkso.com/admin/placeCar_findByAdsUniqueId?ads_unique_id=Z04',
-                type: 'POST',
-                dataType: 'json',
-            })
-            .done(function (data) {
-                var bottomData = data.response.data;
-                var bttpl = '{{#PlaceCars}}<a href="/cars/{{entity_id}}" target="_blank"><img src="{{pic}}"></a>{{/PlaceCars}}';
-                var btcontent = Mustache.render(bttpl, bottomData);
-                var btad = $('#btad');
-                btad.html(btcontent);
-            })
-            //资讯详情右侧多个B
-            $.ajax({
-                url: 'http://ev.cpkso.com/admin/placeArt_findByAdsUniqueId?ads_unique_id=Z06',
-                type: 'POST',
-                dataType: 'json',
-            })
-            .done(function (data) {
-                var alistData = data.response.data;
-                var alistTpl = '{{#PlaceArts}}<li><a href="/news/{{entity_id}}.html" target="_blank"><img src="{{pic}}"><span>{{title}}</a></li>{{/PlaceArts}}';
-                var alistcontent = Mustache.render(alistTpl, alistData);
-                var lista = $('#newslist');
-                lista.html(alistcontent);
-            })
-            //资讯详情右侧多个
-            $.ajax({
-                url: 'http://ev.cpkso.com/admin/placeCar_findByAdsUniqueId?ads_unique_id=Z05',
-                type: 'POST',
-                dataType: 'json',
-            })
-            .done(function (data) {
-                var blistData = data.response.data;
-                for (var i = 0; i < blistData.PlaceCars.length; i++) {
-                    blistData.PlaceCars[i].price = blistData.PlaceCars[i].price ? '￥' + blistData.PlaceCars[i].price + '万':'暂无价格';
-                }
-                var blisttpl = '{{#PlaceCars}}<li><a href="/cars/{{id}}"  target="_blank"><img src="{{pic}}"><span>{{title}}</span><b>{{price}}</b></a></li>{{/PlaceCars}}';
-                var blistcontent = Mustache.render(blisttpl, blistData);
-                var listb = $('#newslistB');
-                listb.html(blistcontent);
-            })
-        })
-
-
-
-
-
-    </script>
-    <script>
-        (function () {
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
-    <script>
-        (function () {
-            var src = (document.location.protocol == "http:") ? "http://js.passport.qihucdn.com/11.0.1.js?983a5023023a6e3ac543e09e1b2a1f69" : "https://jspassport.ssl.qhimg.com/11.0.1.js?983a5023023a6e3ac543e09e1b2a1f69";
-            document.write('<script src="' + src + '" id="sozz"><\/script>');
-        })();
-    </script>
+  <!--百度地图容器-->
+  <div style="width:700px;height:550px;border:#ccc solid 1px;font-size:12px" id="map"></div>
+<a id="ibangkf" href="http://www.ibangkf.com">在线客服系统</a>
+<script type="text/javascript" src="http://c.ibangkf.com/i/c-ss622.js"></script>
 </body>
+<script type="text/javascript">
+  //创建和初始化地图函数：
+  function initMap() {
+    createMap();//创建地图
+    setMapEvent();//设置地图事件
+    addMapControl();//向地图添加控件
+    addMapOverlay();//向地图添加覆盖物
+  }
+  function createMap() {
+    map = new BMap.Map("map");
+    map.centerAndZoom(new BMap.Point(112.409361, 34.652792), 14);
+  }
+  function setMapEvent() {
+    map.enableScrollWheelZoom();
+    map.enableKeyboard();
+    map.enableDragging();
+    map.enableDoubleClickZoom()
+  }
+  function addClickHandler(target, window) {
+    target.addEventListener("click", function () {
+      target.openInfoWindow(window);
+    });
+  }
+  function addMapOverlay() {
+    var markers = [
+      { content: "我的备注", title: "我的标记", imageOffset: { width: 0, height: 3 }, position: { lat: 34.644239, lng: 112.403468 } }
+    ];
+    for (var index = 0; index < markers.length; index++) {
+      var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+      var marker = new BMap.Marker(point, {
+        icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+          imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+        })
+      });
+      var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+      var opts = {
+        width: 200,
+        title: markers[index].title,
+        enableMessage: false
+      };
+      var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+      marker.setLabel(label);
+      addClickHandler(marker, infoWindow);
+      map.addOverlay(marker);
+    };
+  }
+  //向地图添加控件
+  function addMapControl() {
+    var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+    scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+    map.addControl(scaleControl);
+    var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+    map.addControl(navControl);
+    var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+    map.addControl(overviewControl);
+  }
+  var map;
+  initMap();
+</script>
 
 </html>

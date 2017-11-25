@@ -11,7 +11,6 @@ var course = require('./routes/course');
 var team = require('./routes/team');
 var state = require('./routes/state');
 var contactus = require('./routes/contactus');
-var apply = require('./routes/apply');
 
 var indexM = require('./routes/mobile/index');
 var aboutusM = require('./routes/mobile/aboutus');
@@ -19,7 +18,6 @@ var courseM = require('./routes/mobile/course');
 var teamM = require('./routes/mobile/team');
 var stateM = require('./routes/mobile/state');
 var contactusM = require('./routes/mobile/contactus');
-var applyM = require('./routes/mobile/apply');
 
 var app = express();
 
@@ -41,7 +39,6 @@ app.use('/course', course);
 app.use('/team', team);
 app.use('/state', state);
 app.use('/contactus', contactus);
-app.use('/apply', apply);
 
 app.use('/mobile/', indexM);
 app.use('/mobile/aboutus', aboutusM);
@@ -49,7 +46,6 @@ app.use('/mobile/course', courseM);
 app.use('/mobile/team', teamM);
 app.use('/mobile/state', stateM);
 app.use('/mobile/contactus', contactusM);
-app.use('/mobile/apply', applyM);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
